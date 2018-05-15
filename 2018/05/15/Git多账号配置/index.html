@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>Git多账号配置 | 不要香菜</title>
+    <meta name="author" content="Percy" />
+    <meta name="version" content="1.0.0" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="起因若要在同一台电脑上使用两个及以上的GitHub账号，第一个账号已存在电脑中，若要提交到另一个账号就会提示
+1remote: Permission to 用户名/xxx.git denied to 另一个用户名.
+临时解决方法若不想同时支持两个账号，只想删除之前存储的账号。若系统是Win10（其他系统类似，找到凭据管理器即可），可在设置中搜索凭据 ，打开凭据管理器 ，找到Windows 凭据 ,在普通凭据中找到GitHub账号，将其删除即可。这样在提交时会弹出让你输入账号密码的提示框，输入新账" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta name="baidu-site-verification" content="F0CXvmUgA9" />
+
+    
+    
+    <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <button id="open-panel" class="open-panel"><i class="icon-library"></i></button>
+
+    <nav class="nav-inner">
+
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+        </li>
+        
+        
+        
+        <li class="nav-item nav-item-tag">
+            <a id="nav-tag" class="nav-link" href="#">标签</a>
+            <div id="nav-tags" class="nav-tag-wrap">
+                <i class="nav-tag-arrow"></i>
+                
+  <div class="widget-wrap">
+    <h3 class="widget-title">
+        <i class="icon-tag vm"></i>
+        <span class="vm">Tags</span>
+    </h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a></li></ul>
+    </div>
+  </div>
+
+
+            </div>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/archives">归档</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/about">关于</a>
+        </li>
+        
+        
+        
+
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#起因"><span class="toc-number">1.</span> <span class="toc-text">起因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#临时解决方法"><span class="toc-number">2.</span> <span class="toc-text">临时解决方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#终极解决方案"><span class="toc-number">3.</span> <span class="toc-text">终极解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建SSH公钥私钥"><span class="toc-number">3.1.</span> <span class="toc-text">创建SSH公钥私钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置公钥到GitHub"><span class="toc-number">3.2.</span> <span class="toc-text">配置公钥到GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置config文件"><span class="toc-number">3.3.</span> <span class="toc-text">配置config文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#执行测试"><span class="toc-number">3.4.</span> <span class="toc-text">执行测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更改URL"><span class="toc-number">3.5.</span> <span class="toc-text">更改URL</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            Git多账号配置
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="/2018/05/15/Git多账号配置/">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-05-15T09:40:15.000Z" itemprop="datePublished">2018-05-15</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/git/">git</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>若要在同一台电脑上使用两个及以上的GitHub账号，第一个账号已存在电脑中，若要提交到另一个账号就会提示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">remote: Permission to 用户名/xxx.git denied to 另一个用户名.</span><br></pre></td></tr></table></figure>
+<h3 id="临时解决方法"><a href="#临时解决方法" class="headerlink" title="临时解决方法"></a>临时解决方法</h3><p>若不想同时支持两个账号，只想删除之前存储的账号。若系统是Win10（其他系统类似，找到<code>凭据管理器</code>即可），可在设置中搜索<code>凭据</code> ，打开<code>凭据管理器</code> ，找到<code>Windows 凭据</code> ,在普通凭据中找到GitHub账号，将其删除即可。这样在提交时会弹出让你输入账号密码的提示框，输入新账号即可。</p>
+<a id="more"></a>
+<h3 id="终极解决方案"><a href="#终极解决方案" class="headerlink" title="终极解决方案"></a>终极解决方案</h3><h4 id="创建SSH公钥私钥"><a href="#创建SSH公钥私钥" class="headerlink" title="创建SSH公钥私钥"></a>创建SSH公钥私钥</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</span><br></pre></td></tr></table></figure>
+<p>输出显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/用户名/.ssh/id_rsa):</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /c/Users/用户名/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /c/Users/用户名/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:aTdcC........................mQAU your_email@youremail.com</span><br><span class="line">The key&apos;s randomart image is:</span><br><span class="line">+---[RSA 2048]----+</span><br><span class="line">|  .Eo. +o=.....o |</span><br><span class="line">|    . o *o+o..+oo|</span><br><span class="line">|  .  . B +. *.=.o|</span><br><span class="line">|  .   = =o + * +.|</span><br><span class="line">|  +    +S.= + ...|</span><br><span class="line">|  *    ..oo +   .|</span><br><span class="line">|       . .o      |</span><br><span class="line">|  Eo  . .  .     |</span><br><span class="line">|  o    . ..      |</span><br><span class="line">+----[SHA256]-----+</span><br></pre></td></tr></table></figure>
+<p>上面第一步是会让你修改默认的存储路径，直接回车即可；</p>
+<p>第二步是输入密码，也可直接回车不设置密码；</p>
+<p>第三步是确认密码，若没设置密码，也直接回车。</p>
+<p>之后就成功生成了密钥，打开<code>.ssh</code>文件夹，用文本编辑器打开<code>id_rsa.pub</code> 文件，复制内容到剪贴板</p>
+<h4 id="配置公钥到GitHub"><a href="#配置公钥到GitHub" class="headerlink" title="配置公钥到GitHub"></a>配置公钥到GitHub</h4><p>打开<code>https://github.com/settings/keys</code> ,点击点击 <code>New SSH Key</code>按钮，输入标题后，粘贴到下面的Key一栏，保存即可。</p>
+<p>重复上述操作生成另一个key，可先将生成的rsa文件重命名，然后保存到相应的账号下即可。</p>
+<h4 id="配置config文件"><a href="#配置config文件" class="headerlink" title="配置config文件"></a>配置config文件</h4><p>在<code>.ssh</code>目录下创建<code>config</code>文本文件并完成相关配置，此步骤最为关键。</p>
+<p>每个账号单独配置一个Host，每个Host要取一个别名，每个Host主要配置<code>HostName</code>和<code>IdentityFile</code>两个属性即可。</p>
+<p>Host的名字可以取为自己喜欢的名字，不过这个会影响git相关命令，例如：</p>
+<p><code>Host mygithub</code> 这样定义的话，命令如下，即<code>git@后面紧跟的名字改为mygithub</code></p>
+<p><code>git clone git@mygithub:用户名/项目名</code></p>
+<p>内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 该文件用于配置私钥对应的服务器</span><br><span class="line"># Default github user(first@mail.com)</span><br><span class="line">Host github1</span><br><span class="line"> HostName github.com</span><br><span class="line"> User git</span><br><span class="line"> IdentityFile C:/Users/Administrator/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line"> # second user(second@mail.com)</span><br><span class="line"> # 建一个github别名，新建的帐号使用这个别名做克隆和更新</span><br><span class="line">Host github2</span><br><span class="line"> HostName github.com</span><br><span class="line"> User git</span><br><span class="line"> IdentityFile C:/Users/Administrator/.ssh/id_rsa_work</span><br></pre></td></tr></table></figure>
+<h4 id="执行测试"><a href="#执行测试" class="headerlink" title="执行测试"></a>执行测试</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@Host别名</span><br></pre></td></tr></table></figure>
+<p>上述命令会自动生成<code>known_hosts</code>文件把私钥配置进文件中</p>
+<p>内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@percy</span><br><span class="line">The authenticity of host &apos;github.com (13.250.177.223)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is SHA256:nThbg.............................Kw6E5SY8.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? yes</span><br><span class="line">Warning: Permanently added &apos;github.com,13.250.177.223&apos; (RSA) to the list of known hosts.</span><br><span class="line">Hi percy! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<p>看到上述提示就说明链接成功</p>
+<h4 id="更改URL"><a href="#更改URL" class="headerlink" title="更改URL"></a>更改URL</h4><p>也可以说这是多账号的缺点吧，就必须要使用SSH协议，而不能再使用HTTPS了,将项目下<code>.git/config</code>中的url改为<code>git@Host别名:GitHub用户名/项目名.git</code></p>
+
+        
+    </section>
+</article>
+
+
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+</footer>
+
+
+    </div>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            var nodes = {
+                nav: $('#nav'),
+                aside: $('#aside'),
+                navTags: $('#nav-tags')
+            };
+
+            $('#open-panel, #aside-mask').on('click', function() {
+                nodes.aside.toggleClass('panel-show');
+            });
+            $('#nav-tag').on('click', function(event) {
+                event.preventDefault();console.log(nodes.navTags.attr('class'))
+                nodes.navTags.toggleClass('tag-show');console.log(nodes.navTags.attr('class'))
+            })/*.hover(function() {
+                nodes.navTags.addClass('tag-show');
+            }, function() {
+                nodes.navTags.removeClass('tag-show');
+            });*/
+
+            
+            $(document.body).scrollspy({target: '#aside-inner'});
+            
+        });
+    </script>
+
+</body>
+</html>

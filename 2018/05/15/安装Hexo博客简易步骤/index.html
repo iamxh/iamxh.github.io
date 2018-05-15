@@ -7,23 +7,26 @@
 
     
 
-    <title>伊始 | 不要香菜</title>
+    <title>安装Hexo博客简易步骤 | 不要香菜</title>
     <meta name="author" content="Percy" />
     <meta name="version" content="1.0.0" />
     <meta name="keywords" content="" />
-    <meta name="description" content="关于第一篇博文写什么好，思绪良久，无果，索性赋诗一首：
-你眼前的我是红尘万丈。
-我眼里的你是化外一方。
+    <meta name="description" content="
+安装node.js
 
-若，你跳得出去，且安心做你的和尚。
-我只记取你当初的模样，
-白衣胜雪，才冠三梁。
-若，跳不出去，亲爱的，
-请和我于红尘里相爱一场。
-醉笑陪君三万场。
-不诉离殇。
-摘自《世间所有相遇，都是久别重逢》
-" />
+安装hexo
+1npm install -g hexo-cli
+
+装好hexo后，初始化博客目录
+1hexo init blog
+上述命令会在当前目录下新建blog目录，然后把hexo的所有文件放到该目录下
+   
+
+检测安装
+12345hexo new test_my_site  #新建一篇名为test_my_site的文章hexo g   #生成，是hexo generate的缩写hexo s  # 启动本地服务，是hexo server的缩写
+
+更改主题
+1git " />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <meta name="baidu-site-verification" content="F0CXvmUgA9" />
@@ -137,21 +140,21 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            伊始
+            安装Hexo博客简易步骤
         </h1>
         
         <div class="article-meta clearfix">
-            <a class="article-date" href="/2018/05/11/伊始/">
+            <a class="article-date" href="/2018/05/15/安装Hexo博客简易步骤/">
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2018-05-11T09:56:57.000Z" itemprop="datePublished">2018-05-11</time>
+    <time datetime="2018-05-15T09:32:22.000Z" itemprop="datePublished">2018-05-15</time>
 </a>
 
             
 <div class="article-tag-list">
     <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/杂谈/">杂谈</a>
+    <a class="article-tag-link" href="/tags/hexo/">hexo</a>
 </div>
 
 
@@ -160,18 +163,42 @@
     
     <section class="article-body markdown-body">
         
-        <p>关于第一篇博文写什么好，思绪良久，无果，索性赋诗一首：</p>
-<p>你眼前的我是红尘万丈。</p>
-<p>我眼里的你是化外一方。</p>
-<a id="more"></a>
-<p>若，你跳得出去，且安心做你的和尚。</p>
-<p>我只记取你当初的模样，</p>
-<p>白衣胜雪，才冠三梁。</p>
-<p>若，跳不出去，亲爱的，</p>
-<p>请和我于红尘里相爱一场。</p>
-<p>醉笑陪君三万场。</p>
-<p>不诉离殇。</p>
-<p>摘自《世间所有相遇，都是久别重逢》</p>
+        <ol>
+<li><p>安装node.js</p>
+</li>
+<li><p>安装hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>装好hexo后，初始化博客目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<p>上述命令会在当前目录下新建blog目录，然后把hexo的所有文件放到该目录下</p>
+   <a id="more"></a>
+</li>
+<li><p>检测安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo new test_my_site  #新建一篇名为test_my_site的文章</span><br><span class="line"></span><br><span class="line">hexo g   #生成，是hexo generate的缩写</span><br><span class="line"></span><br><span class="line">hexo s  # 启动本地服务，是hexo server的缩写</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更改主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/sanonz/hexo-theme-concise.git themes/concise</span><br></pre></td></tr></table></figure>
+<p>下载到blog目录下的themes目录下</p>
+</li>
+<li><p>更改配置文件，使主题生效</p>
+<ul>
+<li>在 <code>_config.yml</code> 配置文件中 把 <code>theme</code> 值改为 <code>concise</code>.</li>
+<li>复制 <code>themes/concise/_config.example.yml</code> 配置文件为 <code>themes/concise/_config.yml</code></li>
+</ul>
+</li>
+<li><p>由于主题是用less编译，更换编译器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-less --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关联GitHub</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">打开站点的配置文件_config.yml，翻到最后修改为：</span><br><span class="line"></span><br><span class="line">deploy: </span><br><span class="line">type: git</span><br><span class="line">repo: 这里填入你之前在GitHub上创建仓库的完整路径，记得加上 .git</span><br><span class="line">branch: master</span><br><span class="line"></span><br><span class="line">参考如下：</span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/iamxh/iamxh.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装部署插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d  #部署，是hexo deploy的缩写</span><br></pre></td></tr></table></figure></li>
+</ol>
 
         
     </section>
