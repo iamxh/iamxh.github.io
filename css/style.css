@@ -970,6 +970,9 @@ body {
 .highlight .meta {
   color: #75715e;
 }
+.markdown-body .highlight {
+  /*ɾ��padding: 0;  �޸�Firefox�������ֹ�����*/
+}
 .markdown-body .highlight table {
   margin-bottom: 0;
 }
@@ -982,7 +985,6 @@ body {
   border: none;
 }
 .markdown-body .highlight pre {
-  padding: 0;
   overflow: auto;
   font-size: inherit;
   line-height: inherit;
