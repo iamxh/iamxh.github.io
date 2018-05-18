@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>Git使用宝典 | 不要香菜</title>
+    <meta name="author" content="Percy" />
+    <meta name="version" content="1.0.0" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="基础命令准备工作
+
+
+
+
+
+
+
+$ git init &amp;lt;project-name&gt;
+
+
+初始化一个本地资源库
+
+
+$ git clone &amp;lt;url&gt;
+
+
+下载工程，包括它完整的版本记录
+
+
+$ git status
+
+
+查看当前仓库的状态
+
+
+$ git add &amp;lt;file&gt;
+
+
+开始跟踪一个文件，使用文件或目录的路径作为参数；如果参数是目录的路径，该命令将递归地跟踪该目录下的所有文件。可以用.添加所有文件
+
+
+$ git log
+
+
+显示从最近到最远的提交日志
+
+
+
+
+git" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta name="baidu-site-verification" content="F0CXvmUgA9" />
+
+    
+    
+    <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <button id="open-panel" class="open-panel"><i class="icon-library"></i></button>
+
+    <nav class="nav-inner">
+
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+        </li>
+        
+        
+        
+        <li class="nav-item nav-item-tag">
+            <a id="nav-tag" class="nav-link" href="#">标签</a>
+            <div id="nav-tags" class="nav-tag-wrap">
+                <i class="nav-tag-arrow"></i>
+                
+  <div class="widget-wrap">
+    <h3 class="widget-title">
+        <i class="icon-tag vm"></i>
+        <span class="vm">Tags</span>
+    </h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+    </div>
+  </div>
+
+
+            </div>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/archives">归档</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/about">关于</a>
+        </li>
+        
+        
+        
+
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://iamxh.github.io"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础命令"><span class="toc-number">1.</span> <span class="toc-text">基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#准备工作"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-commit"><span class="toc-number">1.2.</span> <span class="toc-text">git commit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-reset"><span class="toc-number">1.3.</span> <span class="toc-text">git reset</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-checkout"><span class="toc-number">1.4.</span> <span class="toc-text">git checkout</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支管理"><span class="toc-number">2.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git-branch"><span class="toc-number">2.1.</span> <span class="toc-text">git branch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-merge"><span class="toc-number">2.2.</span> <span class="toc-text">git merge</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-rebase"><span class="toc-number">2.3.</span> <span class="toc-text">git rebase</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程操作"><span class="toc-number">3.</span> <span class="toc-text">远程操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git-remote"><span class="toc-number">3.1.</span> <span class="toc-text">git remote</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-fetch"><span class="toc-number">3.2.</span> <span class="toc-text">git fetch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-pull"><span class="toc-number">3.3.</span> <span class="toc-text">git pull</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-push"><span class="toc-number">3.4.</span> <span class="toc-text">git push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-tag"><span class="toc-number">3.5.</span> <span class="toc-text">git tag</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他常用命令"><span class="toc-number">4.</span> <span class="toc-text">其他常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git-stash"><span class="toc-number">4.1.</span> <span class="toc-text">git stash</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非常用命令"><span class="toc-number">5.</span> <span class="toc-text">非常用命令</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            Git使用宝典
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="/2018/05/17/Git使用宝典/">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-05-17T05:59:45.000Z" itemprop="datePublished">2018-05-17</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/git/">git</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h3><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git init &lt;project-name></td>
+</tr>
+<tr>
+<td>初始化一个本地资源库</td>
+</tr>
+<tr>
+<td>$ git clone &lt;url></td>
+</tr>
+<tr>
+<td>下载工程，包括它完整的版本记录</td>
+</tr>
+<tr>
+<td>$ git status</td>
+</tr>
+<tr>
+<td>查看当前仓库的状态</td>
+</tr>
+<tr>
+<td>$ git add &lt;file></td>
+</tr>
+<tr>
+<td>开始跟踪一个文件，使用文件或目录的路径作为参数；如果参数是目录的路径，该命令将递归地跟踪该目录下的所有文件。<strong>可以用.添加所有文件</strong></td>
+</tr>
+<tr>
+<td>$ git log</td>
+</tr>
+<tr>
+<td>显示从最近到最远的提交日志</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h4 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h4><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git commit -m “[descriptive message]”</td>
+</tr>
+<tr>
+<td>提交暂存区中的文件到资源库</td>
+</tr>
+<tr>
+<td>$ git commit -a -m “message”</td>
+</tr>
+<tr>
+<td>跳过使用暂存区域直接提交</td>
+</tr>
+<tr>
+<td>$ git commit -m ‘</td>
+</tr>
+<tr>
+<td>注释可以通过单引号来换行,以’开始，并以’结束</td>
+</tr>
+<tr>
+<td>$ git commit --amend</td>
+</tr>
+<tr>
+<td>合并缓存的修改和上一次的提交，用新的快照替换上一个提交。缓存区没有文件时运行这个命令可以用来编辑上次提交的提交信息，而不会更改快照。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h4><p><strong>HEAD</strong> 在Git中，它是一个指针，指向当前所在的本地分支（可以将 HEAD 想象为当前分支的别名）</p>
+<p>在Git中，用HEAD表示当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100</p>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git reset HEAD &lt;file></td>
+</tr>
+<tr>
+<td>可以把暂存区的修改撤销掉（unstage），重新放回工作区，文件内容不会有变化</td>
+</tr>
+<tr>
+<td>$ git reset HEAD .</td>
+</tr>
+<tr>
+<td>可以删除暂存区中的所有文件，重新放回工作区</td>
+</tr>
+<tr>
+<td>$ git reset HEAD</td>
+</tr>
+<tr>
+<td>若不像上面那样指定某个文件的话，是直接将暂存区的所有文件重新放回工作区</td>
+</tr>
+<tr>
+<td>$ git reset &lt;commit></td>
+</tr>
+<tr>
+<td>撤销&lt;commit>之后的所有提交，保留本地更改</td>
+</tr>
+<tr>
+<td>$ git reset --hard &lt;commit></td>
+</tr>
+<tr>
+<td>丢弃所有历史，然后回退到指定的commit，如git reset --hard HEAD^ 回退到上一版本</td>
+</tr>
+</tbody>
+</table>
+<h4 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h4><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git checkout -- &lt;file></td>
+</tr>
+<tr>
+<td>可以丢弃工作区的修改，命令中的--很重要，没有--，就变成了“切换到另一个分支”的命令</td>
+</tr>
+<tr>
+<td>$ git checkout .</td>
+</tr>
+<tr>
+<td>会用版本库全部文件替换工作区的文件（丢弃工作区中的所有文件修改）</td>
+</tr>
+<tr>
+<td>$ git checkout &lt;name></td>
+</tr>
+<tr>
+<td>切换分支</td>
+</tr>
+<tr>
+<td>$ git checkout -b &lt;name></td>
+</tr>
+<tr>
+<td>创建+切换分支</td>
+</tr>
+</tbody>
+</table>
+<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><h4 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h4><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git branch</td>
+</tr>
+<tr>
+<td>会列出本地所有分支，当前分支前面会标一个*号</td>
+</tr>
+<tr>
+<td>$ git branch -a</td>
+</tr>
+<tr>
+<td>会列出本地和远程追踪分支</td>
+</tr>
+<tr>
+<td>$ git branch &lt;name></td>
+</tr>
+<tr>
+<td>创建分支</td>
+</tr>
+<tr>
+<td>$ git branch -d &lt;name></td>
+</tr>
+<tr>
+<td>删除分支</td>
+</tr>
+<tr>
+<td>$ git branch -D &lt;name></td>
+</tr>
+<tr>
+<td>强行删除，如丢弃一个没有被合并过的分支</td>
+</tr>
+</tbody>
+</table>
+<h4 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h4><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git merge &lt;branch-name></td>
+</tr>
+<tr>
+<td>合并某分支到当前分支</td>
+</tr>
+<tr>
+<td>$ git merge --abort</td>
+</tr>
+<tr>
+<td>取消合并操作,如合并时遇到冲突想取消操作</td>
+</tr>
+</tbody>
+</table>
+<h4 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h4><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git rebase</td>
+</tr>
+<tr>
+<td>变基，将提交到某一分支上的所有修改都移至另一分支上</td>
+</tr>
+<tr>
+<td>$ git rebase --continue</td>
+</tr>
+<tr>
+<td>若上一步有冲突不能自动合并时，待冲突解决后，执行该命令</td>
+</tr>
+<tr>
+<td>$ git rebase --skip</td>
+</tr>
+<tr>
+<td>跳过这次提交</td>
+</tr>
+<tr>
+<td>$ git rebase --abort</td>
+</tr>
+<tr>
+<td>中止</td>
+</tr>
+</tbody>
+</table>
+<h3 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h3><h4 id="git-remote"><a href="#git-remote" class="headerlink" title="git remote"></a>git remote</h4><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git remote</td>
+</tr>
+<tr>
+<td>查看远程库的信息</td>
+</tr>
+<tr>
+<td>$ git remote -v</td>
+</tr>
+<tr>
+<td>显示更详细的信息</td>
+</tr>
+<tr>
+<td>$ git remote show &lt;remote-name></td>
+</tr>
+<tr>
+<td>查看某一个远程仓库的更多信息</td>
+</tr>
+<tr>
+<td>$ git remote add &lt;name> &lt;remote-url></td>
+</tr>
+<tr>
+<td>关联一个远程库，如git remote add origin git@server-name:path/repo-name.git</td>
+</tr>
+</tbody>
+</table>
+<h4 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a>git fetch</h4><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git fetch &lt;remote-name></td>
+</tr>
+<tr>
+<td>默认取回所有分支</td>
+</tr>
+<tr>
+<td>$ git fetch &lt;remote-name> &lt;branch-name></td>
+</tr>
+<tr>
+<td>取回特定分支的更新，如取回origin主机的master分支，git fetch origin master</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意</strong>：所取回的更新，在本地主机上要用”<strong><em>远程主机名/分支名</em></strong>“的形式读取。比如origin主机的master，就要用origin/master读取</p>
+<h4 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h4><p>git pull = git fetch + git merge</p>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git pull</td>
+</tr>
+<tr>
+<td>从远程抓取分支，默认也是拉取所有分支</td>
+</tr>
+<tr>
+<td>$ git pull --all</td>
+</tr>
+<tr>
+<td>拉取所有远程分支并尝试合并</td>
+</tr>
+</tbody>
+</table>
+<h4 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h4><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git push &lt;remote-name> &lt;branch-name></td>
+</tr>
+<tr>
+<td>从本地推送分支，如git push origin serverfix</td>
+</tr>
+<tr>
+<td>$ git push &lt;remote-name> --delete &lt;branch-name></td>
+</tr>
+<tr>
+<td>删除远程分支，如git push origin --delete serverfix</td>
+</tr>
+<tr>
+<td>$ git push origin &lt;tagname></td>
+</tr>
+<tr>
+<td>可以推送一个本地标签</td>
+</tr>
+<tr>
+<td>$ git push origin --tags</td>
+</tr>
+<tr>
+<td>可以推送全部未推送过的本地标签</td>
+</tr>
+<tr>
+<td>$ git push origin :refs/tags/&lt;tagname></td>
+</tr>
+<tr>
+<td>可以删除一个远程标签</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git checkout -b &lt;branch-name> &lt;remote-name>/&lt;branch-name></td>
+</tr>
+<tr>
+<td>在本地创建和远程分支对应的分支，本地和远程分支的名称最好一致。如git checkout -b serverfix origin/serverfix。由于该命令比较常用，提供了快捷方式：git checkout --track origin/serverfix</td>
+</tr>
+<tr>
+<td>$ git branch --set-upstream &lt;branch-name> origin/branch-name</td>
+</tr>
+<tr>
+<td>建立本地分支和远程分支的关联</td>
+</tr>
+</tbody>
+</table>
+<h4 id="git-tag"><a href="#git-tag" class="headerlink" title="git tag"></a>git tag</h4><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git tag</td>
+</tr>
+<tr>
+<td>查看所有标签</td>
+</tr>
+<tr>
+<td>$ git tag &lt;name></td>
+</tr>
+<tr>
+<td>打一个新标签 ，默认为HEAD，也可以指定一个commit id</td>
+</tr>
+<tr>
+<td>$ git tag -a &lt;tagname> -m “blablabla…”</td>
+</tr>
+<tr>
+<td>可以指定标签信息</td>
+</tr>
+<tr>
+<td>$ git tag -d &lt;tagname></td>
+</tr>
+<tr>
+<td>可以删除一个本地标签</td>
+</tr>
+<tr>
+<td>$ git show &lt;tagname></td>
+</tr>
+<tr>
+<td>查看标签信息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h3><h4 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h4><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git stash</td>
+</tr>
+<tr>
+<td>可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作</td>
+</tr>
+<tr>
+<td>$ git stash list</td>
+</tr>
+<tr>
+<td>查看已经保存的工作现场</td>
+</tr>
+<tr>
+<td>$ git stash apply</td>
+</tr>
+<tr>
+<td>恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除</td>
+</tr>
+<tr>
+<td>$ git stash pop</td>
+</tr>
+<tr>
+<td>恢复的同时把stash内容也删了</td>
+</tr>
+</tbody>
+</table>
+<h3 id="非常用命令"><a href="#非常用命令" class="headerlink" title="非常用命令"></a>非常用命令</h3><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ git reflog</td>
+</tr>
+<tr>
+<td>查看命令历史</td>
+</tr>
+<tr>
+<td>$ git log --graph --pretty=oneline --abbrev-commit</td>
+</tr>
+<tr>
+<td>可以看到分支的合并情况</td>
+</tr>
+<tr>
+<td>$ git log --graph</td>
+</tr>
+<tr>
+<td>命令可以看到分支合并图</td>
+</tr>
+<tr>
+<td>$ git config --list</td>
+</tr>
+<tr>
+<td>命令来列出所有 Git 当时能找到的配置</td>
+</tr>
+<tr>
+<td>$ git checkout -b &lt;branch-name> &lt;tag-name></td>
+</tr>
+<tr>
+<td>在特定的标签上创建一个新分支</td>
+</tr>
+</tbody>
+</table>
+
+        
+    </section>
+</article>
+
+
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+</footer>
+
+
+    </div>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            var nodes = {
+                nav: $('#nav'),
+                aside: $('#aside'),
+                navTags: $('#nav-tags')
+            };
+
+            $('#open-panel, #aside-mask').on('click', function() {
+                nodes.aside.toggleClass('panel-show');
+            });
+            $('#nav-tag').on('click', function(event) {
+                event.preventDefault();console.log(nodes.navTags.attr('class'))
+                nodes.navTags.toggleClass('tag-show');console.log(nodes.navTags.attr('class'))
+            })/*.hover(function() {
+                nodes.navTags.addClass('tag-show');
+            }, function() {
+                nodes.navTags.removeClass('tag-show');
+            });*/
+
+            
+            $(document.body).scrollspy({target: '#aside-inner'});
+            
+        });
+    </script>
+
+</body>
+</html>
