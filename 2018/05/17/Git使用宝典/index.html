@@ -447,13 +447,19 @@ git" />
 <td>$ git fetch &lt;remote-name></td>
 </tr>
 <tr>
-<td>默认取回所有分支</td>
+<td>默认取回所有分支，没有remote指定时默认使用origin，除非已为当前分支配置了上游分支</td>
 </tr>
 <tr>
 <td>$ git fetch &lt;remote-name> &lt;branch-name></td>
 </tr>
 <tr>
 <td>取回特定分支的更新，如取回origin主机的master分支，git fetch origin master</td>
+</tr>
+<tr>
+<td>$ git fetch --all</td>
+</tr>
+<tr>
+<td>获取所有远程</td>
 </tr>
 </tbody>
 </table>
