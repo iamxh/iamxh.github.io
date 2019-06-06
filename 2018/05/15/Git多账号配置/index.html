@@ -136,7 +136,7 @@
 <p>第二步是输入密码，也可直接回车不设置密码；</p>
 <p>第三步是确认密码，若没设置密码，也直接回车。</p>
 <p>之后就成功生成了密钥，打开<code>.ssh</code>文件夹，用文本编辑器打开<code>id_rsa.pub</code> 文件，复制内容到剪贴板</p>
-<h4 id="配置公钥到GitHub"><a href="#配置公钥到GitHub" class="headerlink" title="配置公钥到GitHub"></a>配置公钥到GitHub</h4><p>打开<code>https://github.com/settings/keys</code> ,点击点击 <code>New SSH Key</code>按钮，输入标题后，粘贴到下面的Key一栏，保存即可。</p>
+<h4 id="配置公钥到GitHub"><a href="#配置公钥到GitHub" class="headerlink" title="配置公钥到GitHub"></a>配置公钥到GitHub</h4><p>打开<code>https://github.com/settings/keys</code> ,点击 <code>New SSH Key</code>按钮，输入标题后，粘贴到下面的Key一栏，保存即可。</p>
 <p>重复上述操作生成另一个key，可先将生成的rsa文件重命名，然后保存到相应的账号下即可。</p>
 <h4 id="配置config文件"><a href="#配置config文件" class="headerlink" title="配置config文件"></a>配置config文件</h4><p>在<code>.ssh</code>目录下创建<code>config</code>文本文件并完成相关配置，此步骤最为关键。</p>
 <p>每个账号单独配置一个Host，每个Host要取一个别名，每个Host主要配置<code>HostName</code>和<code>IdentityFile</code>两个属性即可。</p>
