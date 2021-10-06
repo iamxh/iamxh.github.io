@@ -1,16 +1,603 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ partial('_macro/post.swig', {post: page}) }}
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","width":250,"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="多样的公正本文的核心任务就是帮助你寻找你自己的公正观。 电车难题：  如果你是一个电车司机，你正在开着车，突然发现刹车失灵了。正前方的轨道上有五个工人正在施工。但刹车失灵怎么也停不下来。此时你突然发现轨道边还有一条岔路。那条岔路上也有一个工人在施工。 你赶紧用各种各样的办法刹车，但这车还是停不下来。这车要是接着往前开，那五个工人的命可能就没了。 所以你是选择牺牲一个人还是牺牲五个人？ 直觉告诉你，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="哈佛公正课">
+<meta property="og:url" content="http://iamxh.github.io/2019/09/08/%E5%93%88%E4%BD%9B%E5%85%AC%E6%AD%A3%E8%AF%BE/index.html">
+<meta property="og:site_name" content="不要香菜">
+<meta property="og:description" content="多样的公正本文的核心任务就是帮助你寻找你自己的公正观。 电车难题：  如果你是一个电车司机，你正在开着车，突然发现刹车失灵了。正前方的轨道上有五个工人正在施工。但刹车失灵怎么也停不下来。此时你突然发现轨道边还有一条岔路。那条岔路上也有一个工人在施工。 你赶紧用各种各样的办法刹车，但这车还是停不下来。这车要是接着往前开，那五个工人的命可能就没了。 所以你是选择牺牲一个人还是牺牲五个人？ 直觉告诉你，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-08T02:37:58.000Z">
+<meta property="article:modified_time" content="2019-09-08T02:38:40.254Z">
+<meta property="article:author" content="假装文艺">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="http://iamxh.github.io/2019/09/08/%E5%93%88%E4%BD%9B%E5%85%AC%E6%AD%A3%E8%AF%BE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>哈佛公正课 | 不要香菜</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不要香菜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-tags&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://iamxh.github.io/2019/09/08/%E5%93%88%E4%BD%9B%E5%85%AC%E6%AD%A3%E8%AF%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="假装文艺">
+      <meta itemprop="description" content="你必须努力奔跑，才能留在原地">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不要香菜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">哈佛公正课
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-08 10:37:58 / 修改时间：10:38:40" itemprop="dateCreated datePublished" datetime="2019-09-08T10:37:58+08:00">2019-09-08</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="多样的公正"><a href="#多样的公正" class="headerlink" title="多样的公正"></a>多样的公正</h3><p>本文的核心任务就是<strong>帮助你寻找你自己的公正观</strong>。</p>
+<p>电车难题：</p>
+<blockquote>
+<p>如果你是一个电车司机，你正在开着车，突然发现刹车失灵了。正前方的轨道上有五个工人正在施工。但刹车失灵怎么也停不下来。此时你突然发现轨道边还有一条岔路。那条岔路上也有一个工人在施工。</p>
+<p>你赶紧用各种各样的办法刹车，但这车还是停不下来。这车要是接着往前开，那五个工人的命可能就没了。</p>
+<p>所以你是选择牺牲一个人还是牺牲五个人？</p>
+<p><strong>直觉告诉你，选择救五个人更正确。</strong></p>
+</blockquote>
+<span id="more"></span>
+
+<blockquote>
+<p>难题升级，你不是电车司机了，而是一个站在桥上的路人，你看到了桥下这辆失控的电车。同时，你的身边还站着个胖子，如果你把他推下桥去，这个胖子就能拦住电车，救下全部的六个工人。</p>
+<p>我想问问你，你会选择伸手推他吗？此时，你应该犹豫了，在没有经过胖子的同意，就让他置于危险，即便你这样做是为了救人，也是不对的。</p>
+</blockquote>
+<p>以上运用了两种不同的评判公正的标准。</p>
+<ul>
+<li><strong>功利主义</strong>：认为大多数人的利益和幸福比少数人的更重要，所以在没有办法的情况下，只能牺牲少数人。</li>
+<li><strong>自由主义</strong>：自由主义尊重每个人的权利不受到他人干涉</li>
+</ul>
+<p>故事1：美国的佛罗里达因飓风而引起的物价飞涨。有些人指责商家趁火打劫，没有社会公德心。但经济学家却说这是由供求关系决定的，完全符合市场规律。</p>
+<p>故事2：美国为在阿富汗和伊拉克战争受伤的一部分老兵颁发”紫心勋章“。但有一群老兵也牺牲了他们的健康，得了一种病叫<strong>创伤后应激障碍</strong>。心理造成太大刺激，战后情绪极度抑郁，噩梦缠身。这些人却没有受到奖章。此时判断的标准可以从“德性”的角度来判断，想想这枚勋章是为了表彰什么品德。</p>
+<p>从上面两个故事可以看出，公正不容易判断，因为它有太多不同的标准。所以咱们<strong>要学会从多个角度出发</strong>，看看哪一种或是哪几种评判标准，更适合评价你遇到的问题</p>
+<h3 id="功利主义"><a href="#功利主义" class="headerlink" title="功利主义"></a>功利主义</h3><ul>
+<li><p>基本观点：只要让所有人的快乐加起来超过所有人的痛苦，使得快乐最大化，这件事就是公平的</p>
+</li>
+<li><p>两个特点：</p>
+<ol>
+<li><p><strong>功利主义服务的对象并不是个人，而是集体。</strong></p>
+<blockquote>
+<p>反对者的声音：会引用自由主义的观点，认为个人权利应该受到保护，不能因为集体利益而被随意侵犯</p>
+</blockquote>
+</li>
+<li><p><strong>认为公正的基础是数字化的幸福和痛苦，并且个体间的幸福和痛苦可以相加减。</strong></p>
+<blockquote>
+<p>反对者的声音：</p>
+<ul>
+<li>公正与否是一种道德评价，而道德评价不像是经济问题，很难用数字来衡量</li>
+<li>快乐和痛苦是主观的，不同人的体验都不同。但功利主义想要通过统一的幸福标准，通过简单粗暴的加减运算得出集体的最大幸福，这很难实现。如酗酒的快乐，飙车的快乐等</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<p>然后另一个英国哲学家对上面的功利主义进行了改良，说<strong>功利主义的快乐标准不应该是一套，应该有两套评价标准，一套叫低级快乐，一套叫高级快乐。</strong>像前面的酗酒飙车那都是低级快乐，我们应该追求的是高级快乐，也就是道德和修养上显得更加高贵的快乐，如阅读莎士比亚，听交响乐等。</p>
+<p>这听起来似乎有几分道理，但说实话，我们在沙发上躺尸得到的快乐有时候的确比硬着头皮看莎士比亚要多一些，所以这个快乐的分级已经脱离了直观的快乐和痛苦，并不是纯粹的功利主义。</p>
+</li>
+</ul>
+<h3 id="自由主义"><a href="#自由主义" class="headerlink" title="自由主义"></a>自由主义</h3><p>康德认为的公正是，<strong>评价事情是不是公正，不在于结果，而在于动机</strong>。就是，一件事情你只要尽力去做了，有没有好的结果都没有关系。</p>
+<p><strong>那怎么才叫自由，怎样做事才叫正义呢？</strong></p>
+<p>自由正义就是要听理性的声音，也就是<strong>绝对命令</strong>的声音，而不是听<strong>假言命令</strong>的</p>
+<p>比如你胆小想让自己变得勇敢，在犹豫要不要参加演讲比赛。理性的声音让你参加，会让你变得勇敢。而另一种声音可能是第一名有奖金。所以，前者是绝对命令，是你内心真正的想法；而后者是假言命令。<strong>什么叫假言命令，就是有条件的命令。</strong>因为只有你最后拿到了冠军，这个命令才成立。</p>
+<p>相反的，绝对命令之所以是绝对的，就是因为，无论你最后比赛结果如何，你参加了比赛，自己都变得更加勇敢了，所以这个命令就是绝对的。</p>
+<p>因为只有这样，无论你会不会得到奖励，或是受到惩罚，你都会选择去做这件事；也只有这样，等事情结束之后，你才可以无条件地接受任何的结果，也不会后悔自己去做了这件事。【我们坚持一件事情，并不是因为这样做了会有效果，而是坚信，这样做是对的】</p>
+<p>但每个人的内心都不一样，万一有人内心的真正想法是做伤害别人的事，去杀人放火，这样的事情也叫公正吗？</p>
+<p><strong>两个判断公正的标准</strong></p>
+<ol>
+<li><strong>这件事情要可以普遍化</strong>。就是换位思考，把所有人都放在你的位置上，看他们的决定是否跟你一样。如吃榴莲。</li>
+<li>是你在做一件事情的时候，<strong>要把人看作目的</strong>。也就是对所有人都要尊重，把对方当作和你一样平等的人来看待。</li>
+</ol>
+<h3 id="差异原则"><a href="#差异原则" class="headerlink" title="差异原则"></a>差异原则</h3><blockquote>
+<p>分蛋糕，如何分？有人说是小明买的，他应该多分点，而有人说小江没吃早饭，他应该多多分一点。</p>
+</blockquote>
+<p><strong>无知之幕</strong>：所有人都不知道自己的身份，而整个社会创造的财富就像是一个大蛋糕，而在真正的社会上，有人是大富翁，不想把钱跟别人分享，有人非常穷，需要靠社会救助度日。此时，再让人想想如何分蛋糕。</p>
+<p>此时，大家都会同意让最不利的人群也能吃上蛋糕，因为大家都会先假设自己拥有最坏的身份。</p>
+<p>差异原则有两个方面：</p>
+<ol>
+<li><strong>差异原则会鼓励所有人公平竞争</strong>。你能力越大，贡献越大，能吃到的蛋糕也就越大。</li>
+<li>也是最重要的一点，<strong>差异原则要保证社会上最不利的人也能得到福利</strong>。也就是说，在无知之幕落下之后，即使你发现自己就是那个最穷、最倒霉、最可怜的人，你还是能够吃上一小块蛋糕。</li>
+</ol>
+<p>罗尔斯的差异原则一提出，就遭到了哈佛另一个教授诺奇克的实名反对：</p>
+<p>他认为<strong>真正的自由主义应该是鼓励人们自由竞争</strong>。凭本事吃蛋糕，谁都不愿意把自己挣的钱跟没钱的人平分，不劳而获。</p>
+<p>然后罗尔斯就反驳：</p>
+<p>第一，差异原则的第一条是鼓励能力越强的人去创造越多的价值，去享受越大的蛋糕，而不是跟底层的人去平分</p>
+<p>第二，<strong>一个人的成功并不仅仅因为他很努力，还因为他很幸运</strong>。比如一个在广东打工的16岁小姑娘，每天工作10小时，周末还得加班，辛辛苦苦一个月才拿到2000块的工资，还比不上一个明星穿的一件衣服，你能说她不努力吗？</p>
+<h3 id="社群主义"><a href="#社群主义" class="headerlink" title="社群主义"></a>社群主义</h3><p>亚里士多德判断一件事是否公正的两个标准：</p>
+<ol>
+<li><strong>看这件事有没有实现它应有的目的</strong></li>
+<li><strong>看这件事有没有鼓励某种德性</strong>。</li>
+</ol>
+<p>所以，我们在做一件事情的时，可以从两方面来考虑：</p>
+<ol>
+<li><strong>好好想想，你是为了什么目的去做这件事；</strong></li>
+<li><strong>动动脑筋思考，做这件事有没有提高你哪方面的能力或者是哪方面的品德？</strong>【成长性思维】</li>
+</ol>
+<p>亚里士多德的“公正观”：</p>
+<p><strong>让有天赋的人去做他们擅长的事，然后带领大家一起追求卓越。</strong></p>
+<p>例1：希特勒杀害了很多犹太人，此时一个德国青年说，我们这一代德国人没有谁杀害过犹太人，历史过去就让它过去，为何还要提？</p>
+<p>例2：15世纪把黑人当奴隶，解放黑奴后有地方政府提出要向黑人道歉，要拨款补偿给黑人的后代。那有些政治家就说，我们又没有养过黑奴，凭什么要让选民花钱去给他们的曾曾曾祖父赎罪。</p>
+<p>如果要肯定一个人完全的自由和独立，你很难去反驳德国青年和美国政治家的话。因为一个人的确没有义务要去为他没有犯下的罪行道歉，也没有义务要去替他的前辈人去赎罪。</p>
+<p>那为什么全世界仍在纪念犹太人屠杀，为什么美国现在仍然会对非洲裔的美国公民有一定的政策优惠呢？原因是</p>
+<ol>
+<li>社群主义会说，<strong>一个人不可能是完全独立的个体</strong>，因为我们每个人都是生活在集体当中的，而一个人只要是活在集体里，就自然而然地、或多或少地会受到集体的影响。</li>
+<li>社群主义不仅仅会<strong>强调对集体的历史记忆</strong>，还强调，咱们应该<strong>团结集体当中的所有成员</strong>。</li>
+</ol>
+<p>社群主义提倡的责任和义务：</p>
+<ol>
+<li>自然的义务，是每个人”生而为人“就必须承担的义务，如不能无缘无故地去伤害一个人</li>
+<li>自愿的义务，指你对他人做出承诺带来的义务</li>
+<li>团结的义务，指的是你对你的集体也有责任</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/09/07/%E5%93%88%E4%BD%9B%E5%B9%B8%E7%A6%8F%E8%AF%BE/" rel="next" title="哈佛幸福课">
+                  <i class="fa fa-chevron-left"></i> 哈佛幸福课
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/09/08/%E5%93%88%E4%BD%9B%E6%9E%81%E7%AE%80%E4%B8%AD%E5%9B%BD%E5%8F%B2/" rel="prev" title="哈佛极简中国史">
+                  哈佛极简中国史 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%A0%B7%E7%9A%84%E5%85%AC%E6%AD%A3"><span class="nav-number">1.</span> <span class="nav-text">多样的公正</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E5%88%A9%E4%B8%BB%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">功利主义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E7%94%B1%E4%B8%BB%E4%B9%89"><span class="nav-number">3.</span> <span class="nav-text">自由主义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%AE%E5%BC%82%E5%8E%9F%E5%88%99"><span class="nav-number">4.</span> <span class="nav-text">差异原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BE%E7%BE%A4%E4%B8%BB%E4%B9%89"><span class="nav-number">5.</span> <span class="nav-text">社群主义</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="假装文艺">
+  <p class="site-author-name" itemprop="name">假装文艺</p>
+  <div class="site-description" itemprop="description">你必须努力奔跑，才能留在原地</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">假装文艺</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v5.4.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.4.0.js"></script>
+
+<script src="/js/motion.js?v=7.4.0.js"></script>
+
+
+<script src="/js/schemes/muse.js?v=7.4.0.js"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.4.0.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+<script src="/js/local-search.js?v=7.4.0.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

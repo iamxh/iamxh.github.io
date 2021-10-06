@@ -1,16 +1,594 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ partial('_macro/post.swig', {post: page}) }}
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","width":250,"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="通过本书可以培养起一种”界限感“，明白金钱所代表的市场经济到底有没有一个界限。 一、可以花钱插队吗？(公平)人们普遍认为排队代表的是”先到先得”，是个相对公平的事，那如果有人插队，就会认为破坏了公平。那要是这些人花钱来插队的呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="金钱不能买什么">
+<meta property="og:url" content="http://iamxh.github.io/2019/05/08/%E9%87%91%E9%92%B1%E4%B8%8D%E8%83%BD%E4%B9%B0%E4%BB%80%E4%B9%88/index.html">
+<meta property="og:site_name" content="不要香菜">
+<meta property="og:description" content="通过本书可以培养起一种”界限感“，明白金钱所代表的市场经济到底有没有一个界限。 一、可以花钱插队吗？(公平)人们普遍认为排队代表的是”先到先得”，是个相对公平的事，那如果有人插队，就会认为破坏了公平。那要是这些人花钱来插队的呢？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://coolcdn.igetcool.com/p/course/audiodoc/20180309/1520587404000.jpg">
+<meta property="article:published_time" content="2019-05-08T04:50:37.000Z">
+<meta property="article:modified_time" content="2019-05-08T04:52:11.020Z">
+<meta property="article:author" content="假装文艺">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coolcdn.igetcool.com/p/course/audiodoc/20180309/1520587404000.jpg">
+  <link rel="canonical" href="http://iamxh.github.io/2019/05/08/%E9%87%91%E9%92%B1%E4%B8%8D%E8%83%BD%E4%B9%B0%E4%BB%80%E4%B9%88/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>金钱不能买什么 | 不要香菜</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不要香菜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-tags&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://iamxh.github.io/2019/05/08/%E9%87%91%E9%92%B1%E4%B8%8D%E8%83%BD%E4%B9%B0%E4%BB%80%E4%B9%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="假装文艺">
+      <meta itemprop="description" content="你必须努力奔跑，才能留在原地">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不要香菜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">金钱不能买什么
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-08 12:50:37 / 修改时间：12:52:11" itemprop="dateCreated datePublished" datetime="2019-05-08T12:50:37+08:00">2019-05-08</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>通过本书可以培养起一种”<strong>界限感</strong>“，明白金钱所代表的市场经济到底有没有一个界限。</p>
+<h4 id="一、可以花钱插队吗？-公平"><a href="#一、可以花钱插队吗？-公平" class="headerlink" title="一、可以花钱插队吗？(公平)"></a>一、可以花钱插队吗？(公平)</h4><p>人们普遍认为排队代表的是”先到先得”，是个相对公平的事，那如果有人插队，就会认为破坏了公平。那要是这些人花钱来插队的呢？</p>
+<span id="more"></span>
+
+<ul>
+<li><p>可以</p>
+<blockquote>
+<ol>
+<li>迪士尼乐园：一万六，从快速通道直接接入游戏项目</li>
+<li>飞机：头等舱、商务舱先登机</li>
+</ol>
+<p><strong>价格歧视：商家根据消费者不同的消费意愿和消费能力，把同一款商品卖出不同的价格。</strong></p>
+</blockquote>
+</li>
+<li><p>不可以</p>
+<blockquote>
+<p>美国在颁布某些法律之前会先开一场听证会，而听证会的座位本是平等的分给全体公民的。但有些企业家花钱找排队公司买到座位。</p>
+<p><strong>公共资源</strong>：只要是供某个集体的成员共同享有的东西，都可以叫做公共资源。</p>
+<p>在分配公共资源时，会遵循一个非常重要的原则，那就是<strong>公平</strong>。</p>
+<p>花钱插队破坏了公平原则，其实传递了一个信号，谁有钱就可以优先享受公共资源。</p>
+<p>那公共资源如何来分配？</p>
+<p>1.排队 2. 抽签 3. 按需分配<br>如果是按需分配的话，把资源优先分给那些更想要的人，物尽其用，也是一种公平的分配方式。但一个人愿意多花钱买一样东西，就一定代表这个人更想要这样东西吗？并不是，比如黄牛倒卖门票。只能说明这人有更强的购买力而已。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="二、奖励钱可以提高成绩吗？-激励"><a href="#二、奖励钱可以提高成绩吗？-激励" class="headerlink" title="二、奖励钱可以提高成绩吗？(激励)"></a>二、奖励钱可以提高成绩吗？(激励)</h4><p>例：考第一名奖500，每下降一名，奖金少20</p>
+<p>两种声音：奖励钱是一种刺激，让自己更有动力；其实只要好好学，无论给不给钱，都会认真学习；</p>
+<p>两种声音分别代表了两种激励机制：经济学里的<strong>市场机制</strong>和人内心的<strong>道德机制</strong>。</p>
+<ol>
+<li><p>市场之外的地方，市场能不能起到激励作用？</p>
+<blockquote>
+<p>答案是并不是始终有效，金钱不是学生提高成绩的唯一原因，改变学生对学习的态度才是关键。</p>
+</blockquote>
+</li>
+<li><p>市场会不会阻止道德发挥激励作用？</p>
+<blockquote>
+<p>罚款这样的市场激励，非但不会降低人们去做事的动力，反倒给交罚款的人一种特权，让他们丢掉了基本的责任感。</p>
+</blockquote>
+</li>
+<li><p>碳排放可以交易吗？</p>
+<blockquote>
+<p>《京都议定书》有一条款，如果哪个国家没有达到自己的减排目标，那么这个国家可以花钱，让其它国家来帮它实现剩下的10亿吨任务。</p>
+<p>这样的话，排放二氧化碳变成了有钱国家的特权，道德感被金钱给稀释。</p>
+</blockquote>
+</li>
+</ol>
+<p>金钱不能成为人内心的全部动力。或许会给你带来一定激励，但绝不是全部。</p>
+<h4 id="三、该拿死亡来赚钱吗？-生死"><a href="#三、该拿死亡来赚钱吗？-生死" class="headerlink" title="三、该拿死亡来赚钱吗？(生死)"></a>三、该拿死亡来赚钱吗？(生死)</h4><p>死亡赌局：通过打赌陌生人的死亡来挣钱</p>
+<p>保险和死亡赌局：劳埃德咖啡馆，给船只买保险。</p>
+<p><img src="https://coolcdn.igetcool.com/p/course/audiodoc/20180309/1520587404000.jpg" alt=""></p>
+<p><strong>保险的本质：降低风险打击的方法。</strong></p>
+<p><strong>保险的特点</strong>：1. 针对风险的不确定性；2. 保险费和保险金之间存在差额</p>
+<p>现实社会的死亡赌局：很多老人付不起保险费或不愿意自己出钱买保险，会自愿出卖自己的保险单。看似是正常的金融交易，实则是死亡赌局，在道德上是站不住脚的。</p>
+<h4 id="四、广告该放在哪？-边界"><a href="#四、广告该放在哪？-边界" class="headerlink" title="四、广告该放在哪？(边界)"></a>四、广告该放在哪？(边界)</h4><p>商业广告的特点：</p>
+<ol>
+<li><p>有价格</p>
+<blockquote>
+<p>越火的广告位价格越高。如企业花钱买冠名，江苏苏宁队，广州恒大淘宝队</p>
+</blockquote>
+</li>
+<li><p>倾向性</p>
+<blockquote>
+<p>某家公司的广告肯定是说自家产品的好</p>
+</blockquote>
+</li>
+</ol>
+<p>若你接受了额头打广告的提议，其实就代表了你接受两件事：</p>
+<ol>
+<li>你额头的价格等于一台手机的价格</li>
+<li>你的额头全力支持这家手机店</li>
+</ol>
+<p>那可以拿身体打广告吗？</p>
+<p>我们不能站在道德的制高点来批判这些人，他们拥有管理自己身体的权利，每个人都有自己的价值观，也有自己的具体生活情况。用身体打广告是个人选择，如果有人愿意接受，我们就很难去反对。但有些地方就不再是个人选择，而是许多人的公共选择。</p>
+<p>商业广告的边界</p>
+<ol>
+<li>煤炭基金会赞助学校教材，由于商业广告的倾向性，教材只讲到煤炭的好处而没有其带来的弊端</li>
+<li>警车带公司广告标语有损公正形象</li>
+</ol>
+<h4 id="五、你怎么看待钱？"><a href="#五、你怎么看待钱？" class="headerlink" title="五、你怎么看待钱？"></a>五、你怎么看待钱？</h4><p>经济形式：</p>
+<ol>
+<li>市场经济</li>
+<li>计划经济</li>
+<li>以物换物</li>
+</ol>
+<p>其中市场经济最有本事，因为它能让人们自由地拿钱换到任何东西。因为自由，资源也能得到最好的分配。</p>
+<p>道德与金钱的关系：</p>
+<p>核废料的问题，当金钱参与其中时，公共问题反倒有了商业性质，此时人们更倾向保护自己的利益。</p>
+<p>钱和公共精神与某些道德品质之间，确实存在矛盾。当金钱和市场进入到某些原本该由道德或公共精神主导的领域时，可能会稀释人们原本的道德感，削弱原本的公共精神。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/05/02/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%85%A5%E9%97%A8/" rel="next" title="经济学入门">
+                  <i class="fa fa-chevron-left"></i> 经济学入门
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/05/30/%E8%AF%BB%E5%94%90%E8%AF%97/" rel="prev" title="读唐诗">
+                  读唐诗 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%8F%AF%E4%BB%A5%E8%8A%B1%E9%92%B1%E6%8F%92%E9%98%9F%E5%90%97%EF%BC%9F-%E5%85%AC%E5%B9%B3"><span class="nav-number">1.</span> <span class="nav-text">一、可以花钱插队吗？(公平)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%A5%96%E5%8A%B1%E9%92%B1%E5%8F%AF%E4%BB%A5%E6%8F%90%E9%AB%98%E6%88%90%E7%BB%A9%E5%90%97%EF%BC%9F-%E6%BF%80%E5%8A%B1"><span class="nav-number">2.</span> <span class="nav-text">二、奖励钱可以提高成绩吗？(激励)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E8%AF%A5%E6%8B%BF%E6%AD%BB%E4%BA%A1%E6%9D%A5%E8%B5%9A%E9%92%B1%E5%90%97%EF%BC%9F-%E7%94%9F%E6%AD%BB"><span class="nav-number">3.</span> <span class="nav-text">三、该拿死亡来赚钱吗？(生死)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%B9%BF%E5%91%8A%E8%AF%A5%E6%94%BE%E5%9C%A8%E5%93%AA%EF%BC%9F-%E8%BE%B9%E7%95%8C"><span class="nav-number">4.</span> <span class="nav-text">四、广告该放在哪？(边界)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E4%BD%A0%E6%80%8E%E4%B9%88%E7%9C%8B%E5%BE%85%E9%92%B1%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">五、你怎么看待钱？</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="假装文艺">
+  <p class="site-author-name" itemprop="name">假装文艺</p>
+  <div class="site-description" itemprop="description">你必须努力奔跑，才能留在原地</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">假装文艺</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v5.4.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.4.0.js"></script>
+
+<script src="/js/motion.js?v=7.4.0.js"></script>
+
+
+<script src="/js/schemes/muse.js?v=7.4.0.js"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.4.0.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+<script src="/js/local-search.js?v=7.4.0.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

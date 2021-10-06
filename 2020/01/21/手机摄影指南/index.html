@@ -1,16 +1,675 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ partial('_macro/post.swig', {post: page}) }}
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","width":250,"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="怎样用手机拍好人像三个要点：机位、色彩和调动 机位决定对不对 全身照：机位在腰或腰以下，拍出大长腿就对了 半身照：机位靠上，从上往下拍显得脸小。半身照禁忌，有部分身体被截在画面外，千万不要截在人的关节部位，如膝盖、手肘、关节等部位 面部特写：机位在眼睛。因为焦点在眼睛，所以机位也要在眼睛的位置。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手机摄影指南">
+<meta property="og:url" content="http://iamxh.github.io/2020/01/21/%E6%89%8B%E6%9C%BA%E6%91%84%E5%BD%B1%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="不要香菜">
+<meta property="og:description" content="怎样用手机拍好人像三个要点：机位、色彩和调动 机位决定对不对 全身照：机位在腰或腰以下，拍出大长腿就对了 半身照：机位靠上，从上往下拍显得脸小。半身照禁忌，有部分身体被截在画面外，千万不要截在人的关节部位，如膝盖、手肘、关节等部位 面部特写：机位在眼睛。因为焦点在眼睛，所以机位也要在眼睛的位置。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-21T02:06:32.000Z">
+<meta property="article:modified_time" content="2020-01-21T02:07:37.090Z">
+<meta property="article:author" content="假装文艺">
+<meta property="article:tag" content="读书笔记">
+<meta property="article:tag" content="摄影">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="http://iamxh.github.io/2020/01/21/%E6%89%8B%E6%9C%BA%E6%91%84%E5%BD%B1%E6%8C%87%E5%8D%97/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>手机摄影指南 | 不要香菜</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不要香菜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-tags&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://iamxh.github.io/2020/01/21/%E6%89%8B%E6%9C%BA%E6%91%84%E5%BD%B1%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="假装文艺">
+      <meta itemprop="description" content="你必须努力奔跑，才能留在原地">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不要香菜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">手机摄影指南
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-01-21 10:06:32 / 修改时间：10:07:37" itemprop="dateCreated datePublished" datetime="2020-01-21T10:06:32+08:00">2020-01-21</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="怎样用手机拍好人像"><a href="#怎样用手机拍好人像" class="headerlink" title="怎样用手机拍好人像"></a>怎样用手机拍好人像</h3><p>三个要点：机位、色彩和调动</p>
+<h4 id="机位决定对不对"><a href="#机位决定对不对" class="headerlink" title="机位决定对不对"></a>机位决定对不对</h4><ul>
+<li>全身照：机位在腰或腰以下，拍出大长腿就对了</li>
+<li>半身照：机位靠上，从上往下拍显得脸小。半身照禁忌，有部分身体被截在画面外，<strong>千万不要截在人的关节部位</strong>，如膝盖、手肘、关节等部位</li>
+<li>面部特写：机位在眼睛。因为焦点在眼睛，所以机位也要在眼睛的位置。</li>
+</ul>
+<span id="more"></span>
+
+<p>其他技巧：</p>
+<ol>
+<li><p>补光神器：A4纸</p>
+</li>
+<li><p>如果画面单调可借助自身的元素，如手，可以让被拍摄对象不停地变化手部的姿势和面部做一个配合，比如手放在额头上、脸颊上或者嘴边，或者双手合十放在脸庞，手臂交叉、摸肩膀，下巴靠在手腕上等等。 </p>
+</li>
+<li><p>借助道具</p>
+<blockquote>
+<p>水杯。女生拿水杯，倾向于拍出柔美和可爱；男生拿水杯，可以拍出很深层的一面</p>
+<p>小盆栽：当前景用。让叶子最大限度的贴近镜头，在画面中形成光晕和色块，人为制造景深。还可以用这些小道具来遮挡环境中的混乱，让主体更突出。</p>
+<p>大盆栽：当背景用。让画面活泼起来，还能在室内拍出室外的感觉</p>
+</blockquote>
+</li>
+<li><p>高级玩法：借助玻璃。隔着玻璃拍人，多试几个角度，会得到出乎意料的光影效果。玻璃上还可以洒水 </p>
+</li>
+</ol>
+<h4 id="色彩决定好不好"><a href="#色彩决定好不好" class="headerlink" title="色彩决定好不好"></a>色彩决定好不好</h4><p>色彩这件事说起来特别主观，但色彩是有功能的，它能帮助表达情绪。</p>
+<ol>
+<li><p>如果想突出一个人的面部表情，突出他的情绪，建议让画面的颜色尽量少些，或者尽量同一个色系。</p>
+</li>
+<li><p>当要人的状态显得很有动感的时候，需要选择对比色，如红和绿，黄和蓝</p>
+</li>
+<li><p>背景非常鲜亮时，可以让被摄对象摆出有动感的、大幅度的姿势，充分彰显人物的个性</p>
+</li>
+<li><p>黑白处理，突出情绪，能够稀释掉色彩带来的干扰，特别适合在人物特写的时候表达他的状态</p>
+</li>
+</ol>
+<h4 id="调动你的被拍对象"><a href="#调动你的被拍对象" class="headerlink" title="调动你的被拍对象"></a>调动你的被拍对象</h4><p>姿势太僵硬，表情不自然，怎么办？<strong>不经意的刻意，摆拍中有抓拍</strong></p>
+<ol>
+<li>拍摄对象基本都是熟人，可以从特写开始，由近及远地去调用他的情绪，在这个过程中，不断的跟他说笑，大笑，特别好，特别对等等。通过这些反馈让对方建立自信，然后你会发现对方会慢慢放开，会主动摆pose给你拍，这个过程中，快门不能停，这样可以拍到很多情绪自然的好照片</li>
+<li>有些人怵镜头，不自然。应对方法是别让她看镜头，引导她看窗外，看地面，或者看你背后的某一个点</li>
+<li>如何快速调动被拍对象：核心六个字，“<strong>低头，伸下巴，笑</strong>”</li>
+</ol>
+<h4 id="如何拍好很难调动的小孩"><a href="#如何拍好很难调动的小孩" class="headerlink" title="如何拍好很难调动的小孩"></a>如何拍好很难调动的小孩</h4><p><strong>积极互动，守株待兔</strong></p>
+<p>第一步，选一个光线充足的空间或角度</p>
+<p>第二步，认真和孩子玩耍，准备好手机。过程中不能开闪光灯</p>
+<p>第三步，使用手机连拍功能</p>
+<h3 id="怎样用手机拍好风景"><a href="#怎样用手机拍好风景" class="headerlink" title="怎样用手机拍好风景"></a>怎样用手机拍好风景</h3><p>把风景拍「对」的三个原则：<strong>横平竖直、控制曝光和手要稳</strong></p>
+<ul>
+<li>横平竖直：打开手机中的辅助线，利用辅助线和地平线或者建筑上的直线做一个找准</li>
+<li>控制曝光：看手机屏幕上焦点的方框旁边有个小太阳，按住它往下拉，稍微把曝光降低一些，即使画面黑了一些也没关系，可以利用后期调回来。如果画面很亮，丢失的细节是调不回来的。然后用你的手遮住镜头的上方，形成一个遮光板的效果，避免杂光进入画面</li>
+<li>手要稳：可以用两只手夹住手机，用音量键当快门。另外，每次按完快门，等半秒再放下手机，防止画面变虚</li>
+</ul>
+<p>把风景拍「好」的三点技巧：</p>
+<ol>
+<li>风景放在早晚拍：正午12点，光线强烈，很容易让照片过度曝光，看上去白晃晃，没有明暗冲突，缺少立体感。日出之后的两三个小时和日落之前的两三个小时内都非常适合拍照。暖暖的光线从很低的角度照在建筑物的侧面，刚好和天空冷冷的色调形成对比，显得特立体。这种光被称作侧逆光，无论是顺光拍还是逆光拍，出来的效果都不错</li>
+<li>利用好自然线条：如对树进行仰拍，虽然其他树枝会造成线条乱，这时我们可以用黑白来去除干扰，这样拍出的照片就很有生命力；对于很有线条感的建筑物，可以从对角线把画面分成两部分，人为突出线条的秩序感；利用雨雪天气，其实会给画面增加线条和趣味</li>
+<li>构图给景观加戏：找到前景，人为制造景深。利用环境给景观加一个画框</li>
+</ol>
+<p>如何拍好风景中的人：避免把旅游纪念照拍成到此一游</p>
+<ul>
+<li>大风光，突风景：如果是大风光，如大草原，山顶公路上，建议突出景观的辽阔。操作方式是尽量采用横构图，把拍摄角度放低；拍背影也是个不错的选择，能迅速提升格调。这样拍出来一般是4:3的画幅，可以裁剪成16:9的比例，这是电影屏幕的比例，会让照片自带故事感</li>
+<li>小风景，突出人：人和景的大小该如何安排，可以用<strong>万能的构图法—-三分法</strong>，不管全身还是半身照，不管横版还是竖版，几乎都可以用三分法，而手机上的辅助线刚好是三分法，可以利用它来保障照片的横平竖直，<strong>拍风景中的人时，把人物放在一条线上，留出一边给环境，如果能把人的头部放在横竖两条线的交点上</strong>，这样拍出来照片怎么看都和谐。还可以利用画框法</li>
+</ul>
+<p>提醒：时间紧张的情况下，不用在乎上面的技巧，在框定要拍的风景之后，横竖各拍一张，之后再利用后期软件去增加效果，不过要注意的是不要变焦，一旦变焦，往往1000万的像素就变成500万，画质损失大</p>
+<h3 id="怎样用手机拍好静物"><a href="#怎样用手机拍好静物" class="headerlink" title="怎样用手机拍好静物"></a>怎样用手机拍好静物</h3><p>拍好食物的一条重要辅助线，就是你看到这张照片，你有没有食欲，食物真实有细节特别重要</p>
+<ul>
+<li><p>一个原则：细节制胜</p>
+</li>
+<li><p>增加细节的技巧：补光。拍小物件时，光源往往来自于上方，会让物体的上面很亮，侧面很暗。此时可以用另外一只手机打开手电筒，从侧面给光，注意距离，不要补光过度；还有一个办法是用A4纸，把纸立在静物的暗面，光被反射回来会变得非常柔和</p>
+</li>
+</ul>
+<h3 id="极简手机修图指南"><a href="#极简手机修图指南" class="headerlink" title="极简手机修图指南"></a>极简手机修图指南</h3><p>修图原则：还原真实，突出细节，强化细节，强化情绪</p>
+<h3 id="旅行摄影指南"><a href="#旅行摄影指南" class="headerlink" title="旅行摄影指南"></a>旅行摄影指南</h3><p>自然感，高级感，电影感</p>
+<p>旅行就是去不同的地方，感受不同的文化，享受不一样的快乐。而旅行摄影是为了记录旅行这个过程，记录旅行就是记录时间，就是记录自己的人生。所以，好的旅行照片就是在用有自然感，高级感，电影感的照片在写一篇旅行日记。</p>
+<h4 id="准备篇"><a href="#准备篇" class="headerlink" title="准备篇"></a>准备篇</h4><table>
+<thead>
+<tr>
+<th>设备</th>
+<th>主设备手机，其他配件：自拍架、八爪鱼、补光灯</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>服装穿搭</td>
+<td>百搭款「白上衣+休闲裤/牛仔裤，女生可以穿白裙子」</td>
+</tr>
+<tr>
+<td>风格搭配</td>
+<td>衣服与场景协调</td>
+</tr>
+<tr>
+<td>色彩搭配</td>
+<td>核心原则「身上最好不要超过3种颜色」</td>
+</tr>
+<tr>
+<td>做功课</td>
+<td>提前摸清目的地主色调，背景颜色比较杂，推荐黑白灰；背景为简单色，搭配同色系，也可搭配对比色。还可以准备一些其他小饰品</td>
+</tr>
+</tbody></table>
+<p>人多怎么办？</p>
+<ul>
+<li>技巧一：早起早到，不仅人少，光线还好</li>
+<li>技巧二：调整角度，仰拍人物和地标</li>
+<li>技巧三：iPhone广角效果</li>
+<li>技巧四：长曝光</li>
+</ul>
+<h4 id="姿势篇"><a href="#姿势篇" class="headerlink" title="姿势篇"></a>姿势篇</h4><table>
+<thead>
+<tr>
+<th>拍摄者</th>
+<th>积极与被拍摄者互动</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>被摄者</td>
+<td>要不要看镜头？自然就看，不自然就不看。在自然的状态下，和周围去互动</td>
+</tr>
+<tr>
+<td>初级互动</td>
+<td>有什么，就和什么互动，比如说有面墙，那就去靠着墙</td>
+</tr>
+<tr>
+<td>中级互动</td>
+<td>借助道具，让画面变得更有趣，如戴着帽子等</td>
+</tr>
+<tr>
+<td>高级互动</td>
+<td>和环境互动，比如说你可以从画面的左、中、右、前、中、后，走起来，然后抓拍一张。还可以用连拍，设置录像后截屏</td>
+</tr>
+<tr>
+<td>合照的要点</td>
+<td>错位。不要让所有人在同一个平面，要有一个前中后的错位</td>
+</tr>
+</tbody></table>
+<h4 id="构图篇"><a href="#构图篇" class="headerlink" title="构图篇"></a>构图篇</h4><p><strong>旅行摄影构图原则：人小景大</strong></p>
+<ol>
+<li>设计画面引导线：「引导线」是指具有明显方向性的线条</li>
+<li>在景色中寻找自然的框架构图，构图时注意对边框的对齐平直</li>
+<li>利用前景遮挡，如透过叶子和花去拍远处的风景，让画面更有层次感</li>
+<li>运用留白，要留出干净的背景，这种构图方式不会分散别人的注意力</li>
+</ol>
+<h4 id="光线篇"><a href="#光线篇" class="headerlink" title="光线篇"></a>光线篇</h4><ol>
+<li><p>阴天适合拍人像。因为阴天是柔和的光线，每个角度都能拍，还能保留很多细节</p>
+</li>
+<li><p>日出日落的前后半小时拍户外。影像界的黄金时段，漫射效应最明显</p>
+</li>
+<li><p>中午拍室内。不要让脸正面迎着光，稍微侧一点。如果在户外拍摄阳光比较充足，明暗反差大的地方可以打开HDR模式</p>
+</li>
+<li><p>逆光拍剪影。</p>
+<blockquote>
+<ul>
+<li>首先确保拍摄对象是完全背光的，正面最好不要有任何补光的东西出现；</li>
+<li>第二个是降低曝光，拍剪影的画面重点是背景，所以在对焦之后要拉低画面的曝光度，直到后面的背景达到合适的饱和度再按快门</li>
+<li>第三点是要有好看的肢体语言，无论是静止还是运动，会给人一种强烈的冲击力和意境</li>
+</ul>
+</blockquote>
+</li>
+<li><p>夜景。要找到所处环境最亮的地方，让人的脸部尽量靠近最亮的部分去拍摄，背景最好有足够的空间和明暗关系</p>
+</li>
+</ol>
+<h4 id="自拍篇"><a href="#自拍篇" class="headerlink" title="自拍篇"></a>自拍篇</h4><ol>
+<li>侧面不看镜头，留空间给景色</li>
+<li>后置摄像头借助玻璃或镜子自拍</li>
+<li>录像+截屏</li>
+</ol>
+<h4 id="修图篇"><a href="#修图篇" class="headerlink" title="修图篇"></a>修图篇</h4><p>旅行照片修图的两个动作：</p>
+<ol>
+<li>提高反差</li>
+<li>增加锐度</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+            
+              <a href="/tags/%E6%91%84%E5%BD%B1/" rel="tag"># 摄影</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2020/01/18/%E4%B8%80%E8%B5%B7%E9%80%8F%E8%A7%865G/" rel="next" title="一起透视5G">
+                  <i class="fa fa-chevron-left"></i> 一起透视5G
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2020/01/27/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B4/" rel="prev" title="梁宁·产品思维">
+                  梁宁·产品思维 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E6%A0%B7%E7%94%A8%E6%89%8B%E6%9C%BA%E6%8B%8D%E5%A5%BD%E4%BA%BA%E5%83%8F"><span class="nav-number">1.</span> <span class="nav-text">怎样用手机拍好人像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%BA%E4%BD%8D%E5%86%B3%E5%AE%9A%E5%AF%B9%E4%B8%8D%E5%AF%B9"><span class="nav-number">1.1.</span> <span class="nav-text">机位决定对不对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%89%B2%E5%BD%A9%E5%86%B3%E5%AE%9A%E5%A5%BD%E4%B8%8D%E5%A5%BD"><span class="nav-number">1.2.</span> <span class="nav-text">色彩决定好不好</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E5%8A%A8%E4%BD%A0%E7%9A%84%E8%A2%AB%E6%8B%8D%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.</span> <span class="nav-text">调动你的被拍对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%8B%8D%E5%A5%BD%E5%BE%88%E9%9A%BE%E8%B0%83%E5%8A%A8%E7%9A%84%E5%B0%8F%E5%AD%A9"><span class="nav-number">1.4.</span> <span class="nav-text">如何拍好很难调动的小孩</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E6%A0%B7%E7%94%A8%E6%89%8B%E6%9C%BA%E6%8B%8D%E5%A5%BD%E9%A3%8E%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">怎样用手机拍好风景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E6%A0%B7%E7%94%A8%E6%89%8B%E6%9C%BA%E6%8B%8D%E5%A5%BD%E9%9D%99%E7%89%A9"><span class="nav-number">3.</span> <span class="nav-text">怎样用手机拍好静物</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%81%E7%AE%80%E6%89%8B%E6%9C%BA%E4%BF%AE%E5%9B%BE%E6%8C%87%E5%8D%97"><span class="nav-number">4.</span> <span class="nav-text">极简手机修图指南</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%85%E8%A1%8C%E6%91%84%E5%BD%B1%E6%8C%87%E5%8D%97"><span class="nav-number">5.</span> <span class="nav-text">旅行摄影指南</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E7%AF%87"><span class="nav-number">5.1.</span> <span class="nav-text">准备篇</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A7%BF%E5%8A%BF%E7%AF%87"><span class="nav-number">5.2.</span> <span class="nav-text">姿势篇</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E5%9B%BE%E7%AF%87"><span class="nav-number">5.3.</span> <span class="nav-text">构图篇</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%89%E7%BA%BF%E7%AF%87"><span class="nav-number">5.4.</span> <span class="nav-text">光线篇</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E6%8B%8D%E7%AF%87"><span class="nav-number">5.5.</span> <span class="nav-text">自拍篇</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E5%9B%BE%E7%AF%87"><span class="nav-number">5.6.</span> <span class="nav-text">修图篇</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="假装文艺">
+  <p class="site-author-name" itemprop="name">假装文艺</p>
+  <div class="site-description" itemprop="description">你必须努力奔跑，才能留在原地</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">假装文艺</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v5.4.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.4.0.js"></script>
+
+<script src="/js/motion.js?v=7.4.0.js"></script>
+
+
+<script src="/js/schemes/muse.js?v=7.4.0.js"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.4.0.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+<script src="/js/local-search.js?v=7.4.0.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

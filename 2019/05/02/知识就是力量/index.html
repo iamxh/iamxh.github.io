@@ -1,16 +1,809 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ partial('_macro/post.swig', {post: page}) }}
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","width":250,"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="一、怎样把自己嫁出去犹豫才是最糟糕的 比做一个糟糕的选择更糟糕的事情是不做选择。而比不做选择更糟糕的事情，是你内心还充满了挣扎和犹豫。  表面上犹豫的那一刹那，我很富有，我有很多选择，但往往到最后就是没得选或者是被迫选。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="知识就是力量">
+<meta property="og:url" content="http://iamxh.github.io/2019/05/02/%E7%9F%A5%E8%AF%86%E5%B0%B1%E6%98%AF%E5%8A%9B%E9%87%8F/index.html">
+<meta property="og:site_name" content="不要香菜">
+<meta property="og:description" content="一、怎样把自己嫁出去犹豫才是最糟糕的 比做一个糟糕的选择更糟糕的事情是不做选择。而比不做选择更糟糕的事情，是你内心还充满了挣扎和犹豫。  表面上犹豫的那一刹那，我很富有，我有很多选择，但往往到最后就是没得选或者是被迫选。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-02T06:38:59.000Z">
+<meta property="article:modified_time" content="2019-05-02T06:42:49.719Z">
+<meta property="article:author" content="假装文艺">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="http://iamxh.github.io/2019/05/02/%E7%9F%A5%E8%AF%86%E5%B0%B1%E6%98%AF%E5%8A%9B%E9%87%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>知识就是力量 | 不要香菜</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不要香菜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-tags&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://iamxh.github.io/2019/05/02/%E7%9F%A5%E8%AF%86%E5%B0%B1%E6%98%AF%E5%8A%9B%E9%87%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="假装文艺">
+      <meta itemprop="description" content="你必须努力奔跑，才能留在原地">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不要香菜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">知识就是力量
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-02 14:38:59 / 修改时间：14:42:49" itemprop="dateCreated datePublished" datetime="2019-05-02T14:38:59+08:00">2019-05-02</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="一、怎样把自己嫁出去"><a href="#一、怎样把自己嫁出去" class="headerlink" title="一、怎样把自己嫁出去"></a>一、怎样把自己嫁出去</h2><h3 id="犹豫才是最糟糕的"><a href="#犹豫才是最糟糕的" class="headerlink" title="犹豫才是最糟糕的"></a>犹豫才是最糟糕的</h3><ol>
+<li><p>比做一个糟糕的选择更糟糕的事情是不做选择。而比不做选择更糟糕的事情，是你内心还充满了挣扎和犹豫。</p>
+<blockquote>
+<p>表面上犹豫的那一刹那，我很富有，我有很多选择，但往往到最后就是没得选或者是被迫选。</p>
+</blockquote>
+</li>
+</ol>
+<span id="more"></span>
+<ol start="2">
+<li><p>结婚的理由是什么？</p>
+<blockquote>
+<ul>
+<li>传统婚姻的价值：男女两性在养育孩子这个问题上付出的成本不平等，女性因此付出了太多精力，导致没有富余的精力去获取自己生存的资料（社会分工）。所以才需要男性的承诺</li>
+<li>现代婚姻：大量女性可以获得财富，貌似也不怎么需要男人，有物业、有打车师傅、有外卖。因此女孩结婚的理由也发生了本质变化。以前只要是门当户对，郎才女貌，聘礼足够就行了；而现在的标准或者说条件越来越模糊了，即使在一起了，还会分开吗？</li>
+<li>两者的本质区别：传统婚姻是一个人进入成年之后的第一件事。而现代婚姻是一个人进入成年之后把自己的一切事物捋顺之后的最后一件事。</li>
+<li><strong>协同进化</strong>：找到一个合作伙伴，一起进化，一起成为更好的自己</li>
+</ul>
+</blockquote>
+</li>
+<li><p>现代婚姻行为的问题</p>
+<blockquote>
+<ul>
+<li>心智模式：就是你习惯了这么想，是我有什么，我长的这么好看，我每个月挣那么多，我对你这么好，你为什么不xxx。我希望你如何，你没有按照我希望的那样做，所以我要把你掰回xxx。</li>
+<li>关心有房有车，心智模式存在问题，而每个人的需求又非常多元，比如我希望你陪我逛街，而你要打游戏</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h3 id="现代婚姻是协同进化的邀约"><a href="#现代婚姻是协同进化的邀约" class="headerlink" title="现代婚姻是协同进化的邀约"></a>现代婚姻是协同进化的邀约</h3><ul>
+<li>即兴戏剧：两个陌生人在台上相遇，没有剧本，没有排练，全程不能说NO。其智慧在于永远不要说NO，每一个人都把自己的创造性放进去，推动情节发展，永远不要成为另外一个人创造力和想象力的阻碍。</li>
+<li>YES和AND：先接纳对方的状态，然后把自己放进去创造一个更好的未来</li>
+<li>遇到任何一个陌生人，我改变不了你，我也没有责任改变你，你也没有义务接受我对你的改变。那怎么办？我先认可你的状态，然后我把自己的创造力添加进去，我来构建一个<strong>由我参与的你的未来</strong>，这就是yes和and。</li>
+<li>要想建设性地推进合作，那就不要说不，而是先接纳下来，再求变化。</li>
+<li>案例：我不知道你是谁，我也不认为你一定要长得好看，或者你拥有什么。但是如果你打开这封信你愿意回信的话，请记住一件事，我特别忙。所以如果将来我们能够在一起，我不需要你为我做任何事，除了一件事，当我要出差的时候，你能不能帮我收拾一下行李箱，因为这样我在一个陌生的城市的宾馆打开这个箱子的时候，我能想起你。(我接纳你的现在，但是我把我放进去，我把那个情景描述出来，这是最最打动人的)</li>
+</ul>
+<h3 id="做出选择，勇敢行动"><a href="#做出选择，勇敢行动" class="headerlink" title="做出选择，勇敢行动"></a>做出选择，勇敢行动</h3><ul>
+<li>驯养：指的不是谁养活谁，而是彼此共同投入一段时间，结成一种关系。从此对方在自己的生命中都是一个唯一的存在。</li>
+<li>面对一个选择，做还是不做？尽量去做吧，若选择不做，看似公平的选择，但背后并不公平。不做，什么也不会发生；做，你不会知道有什么奇妙的事情会发生。</li>
+</ul>
+<h2 id="二、怎样做一个更有价值的人"><a href="#二、怎样做一个更有价值的人" class="headerlink" title="二、怎样做一个更有价值的人"></a>二、怎样做一个更有价值的人</h2><h3 id="盯住钱容易做错决策"><a href="#盯住钱容易做错决策" class="headerlink" title="盯住钱容易做错决策"></a>盯住钱容易做错决策</h3><p>出租车司机处理淡旺季的生意</p>
+<p><strong>锚定效应</strong>：指的是一个锚一样的东西、观念，会成为你判断所有事情的标准</p>
+<p><strong>狭窄框架效应</strong>：当框架非常窄的时候，你在框架之中，你实际上看不到世界的全貌。</p>
+<p>所以，钱并不是一个好框架，它会遮蔽人的视野，忽略事情的本质。但若是把钱这个标准拿掉，又很难再找到一个标准作为前行的依据。</p>
+<h3 id="人的本质是一段时间"><a href="#人的本质是一段时间" class="headerlink" title="人的本质是一段时间"></a>人的本质是一段时间</h3><p>人死之后，在墓碑上会刻什么？照片，姓名。会刻存款数字吗？不会，不光你自己觉得不重要，你的家人也不会认为这是你创造的价值。会刻拿过什么证书吗？不会！只会写上生卒年月，如1990~2090，所以这就是一个人的刚性约束和决定性的边界。所以我们唯一拥有的本钱就是时间。理解了这一点，那我们的人生之锚就确定了。</p>
+<p>锚定时间、多元收益、复制时间、营造预期、购买时间</p>
+<ol>
+<li><p>锚定时间：把时间利用好，找到不被打扰的时间持续学习，持续投资自己</p>
+</li>
+<li><p>多元收益：把同样一段时间产生的收益尽可能多元化</p>
+</li>
+<li><p>复制时间：花一份时间，收益无穷多，比如演讲，写作</p>
+<p>————————经营时间的前三级台阶，背后的密码是乘法————————</p>
+</li>
+<li><p>营造预期：找未来的时间要价值，如股票</p>
+<blockquote>
+<p>靠谱：事事有回音，凡事有交代，件件有着落</p>
+</blockquote>
+</li>
+<li><p>购买时间：买别人的时间，然后把它卖掉，难在对别人的信任</p>
+<blockquote>
+<p>花钱买的本质是凝结在它身上的背后的大量人的时间</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>人最宝贵的是生命，每个人的生命只有一次，所以你应该这样度过你的一生：当你回首往事的时候，既不因虚度年华而悔恨，也不因碌碌无为而羞愧。</strong></p>
+<h2 id="三、怎样成为一个不冲动的人"><a href="#三、怎样成为一个不冲动的人" class="headerlink" title="三、怎样成为一个不冲动的人"></a>三、怎样成为一个不冲动的人</h2><p>你不管你自己的情绪，自然会有人替你管理你的情绪。因为我们生活在一个充分协作的商业社会，每个人都在生产自己的产品和服务，要卖给你。要诀就是”把坑挖滑”。其实他们做的这些事无可厚非，但世界出现了一个变化，就是缺了一个停止键。以前电视机，录像，杂志都有，现在的互联网你就一直往下滑吧。</p>
+<h3 id="杏仁核为啥总是赢"><a href="#杏仁核为啥总是赢" class="headerlink" title="杏仁核为啥总是赢"></a>杏仁核为啥总是赢</h3><p>杏仁核：负责冲动，快速反应</p>
+<p>大脑皮层：驱使你做出更理性的，更符合逻辑的一些判断</p>
+<p>例子：比如遇到一个好吃的</p>
+<p>原因：</p>
+<ol>
+<li>来得早：杏仁核早在哺乳动物之前就存在了，好几亿年了。而大脑皮层才几百万年，怎么斗得过地头蛇</li>
+<li>反应快：遇到野兽赶紧跑或者上去干；而大脑皮层呢？739*235算半天</li>
+<li>帮手多：它调动大量的帮手来帮他给我们一个解释(解释为什么会冲动)</li>
+</ol>
+<p>解决之策：</p>
+<ol>
+<li><p>设定边界</p>
+<blockquote>
+<ol>
+<li>他人帮忙</li>
+<li>自己：我知道今天会跟你谈得特别愉快，我怕自己忘了时间，耽误你后面的工作。所以你给我这两个小时，我特别珍惜。我能提前15分钟设个闹钟吗？这样到时候，我们就迅速结束这次愉快的谈话，好不好?(说出这番话的结果：对他高看一眼，是一个有边界的人，珍惜我的时间，尊重我们这次谈话机会的人)</li>
+<li>例子：吵架不过夜，早起挤牙膏，不挤去离婚</li>
+<li>还可以是想象的边界：假设你说的某一句话，明天会被登在报纸的头版头条，你还会说吗？———巴菲特</li>
+</ol>
+</blockquote>
+</li>
+<li><p>减缓反应速度</p>
+<ul>
+<li><p>反应快的东西，通常不能持久(营养会跟不上)，那解决之策就是拖延时间。</p>
+</li>
+<li><p>微信不用语音，但若打字则会使语言速度变慢，有了更多的思考时间。如果男女朋友吵架可以用这招，吵架不用嘴说，发微信，每段话不得少于一百字，你会发现组织语言，写着写着，那个火就渐渐下去了</p>
+</li>
+<li><p>不用感叹号</p>
+</li>
+<li><p>我们在语言攻击别人之前，先<strong>描述自己</strong>，说一下为什么自己很生气</p>
+</li>
+<li><p>题外话：男追女时，问女孩子答不答应。其实应该先描述自己。比如说你面对一个女孩，你就说连续一个月了，我每次见到你，我那个心都咚咚跳。</p>
+<p><strong>总结</strong>：描述自己，让自己的情绪反应慢下来。</p>
+</li>
+</ul>
+</li>
+<li><p>增加认知负担</p>
+<p>如绿巨人，一旦暴怒后力量很大，但智力低下，处理不了复杂的事。</p>
+<blockquote>
+<p>宝宝在看动画片，让她去洗澡，不去！给她一个选择题，进入逻辑运算，是爸爸抱你去洗澡还是妈妈抱你去洗澡？</p>
+</blockquote>
+<p>记笔记，不要用电脑记，而是用笔去记。用笔去记，因为负担更重，你必须在老师的话语流中提取出真正有价值的部分，否则你的注意力都在键盘敲字。</p>
+<p><strong>总结</strong>：心理学界的一个重要发现，增加负担，有助于你吸取那些更有价值的信息。</p>
+</li>
+<li><p>把自己客体化</p>
+<p>例1：冲动消费。包很好看，手机很炫。比如说一个手机五千块，若手机搁这和有人给你 五千块，你会选哪个？如果你决定要钱，那你为什么要损失五千块买这手机呢？</p>
+<p>例2：任何一个人对于比较远期的决策是不太在乎的。所以让人做演讲最好的方法是什么？提前半年约。基本上都会答应，然后每过一个月跟你确认一下，等事到临头了就硬着头皮上了。对应之策是不管什么时候，都全当是明天。</p>
+<p><strong>客体化</strong>：我们都以为自己是自己的主人，我们是主动为自己决策的，但是你有没有想到，其实还有一种可能就是把自己抽离出来。我们把自己当成是一个客人，再回头看一眼。</p>
+<ul>
+<li>跳出画面看画———柳传志</li>
+<li>女孩子爱哭，但不会在镜子前哭，因为镜子把你客体化了。</li>
+<li>如何劝一个女孩别闹？比如说她老公要跟她离婚，那她一定要闹。学术界调查研究指出，绝大多数人第一次离婚之后，第二次婚姻的伴侣是在第一次婚姻存续期间就认识的。不是说在第一次婚姻存续期间你就跟第二任婚姻的伴侣好上了，而是指第一次婚姻结束之后，你在认识的人当中选择了第二次婚姻的伴侣。那就意味着，你的情绪崩溃，抓狂，出格的事，你第二任婚姻的如意郎君都知道，虽然你不知道是谁，但他就是在观察你。</li>
+</ul>
+<p><strong>总结</strong>：一旦把自己客体化，你就获得了一个极其理性的视角。事实上每一次发泄，每一次纵容自己的情绪，最终受伤的都是自己。</p>
+</li>
+<li><p>放大观察尺度</p>
+<p>历史学和天文学最大的共同特点是有极大的尺度，一个是时间尺度，一个是空间尺度。你现在小小的烦恼，当你学完历史之后你就知道，历史上无数人都有过这样的烦恼；你现在小小的烦恼放在那么大的空间尺度里，它就是一粒微尘。</p>
+<p>小孩快乐很简单，成人简单很快乐。</p>
+</li>
+</ol>
+<h2 id="四、怎样重新获得别人的信任"><a href="#四、怎样重新获得别人的信任" class="headerlink" title="四、怎样重新获得别人的信任"></a>四、怎样重新获得别人的信任</h2><h3 id="原谅很容易，再次信任很困难"><a href="#原谅很容易，再次信任很困难" class="headerlink" title="原谅很容易，再次信任很困难"></a>原谅很容易，再次信任很困难</h3><p>如果你做错事了，仅仅做出诚恳的道歉就够了吗？远远不够！因为不公平。</p>
+<p>例子：外卖因为系统出错给送丢了，虽然道歉了，甚至补偿了，但所有的后果都是自己在承担。所以你要知道<strong>在道歉结束后，甚至原谅已经发生之后仍然有一个结果叫不公平</strong>。所以在下次点餐时知道他们系统不稳定，也就不再信任他们了。</p>
+<ul>
+<li>小孩的世界：全部由外界对他的评价构成，所以犯错了道歉，被原谅后，对错问题就解决了。</li>
+<li>成人的世界：一个成人想要活得好，关键是能够构建丰富紧密的社会协作，丰富紧密的社会协作的背后是信任，信任垮了你的价值就降低了</li>
+</ul>
+<p><strong>总结</strong>：对小孩子来说灾难是犯错，对于成人来说灾难是不受信任。原谅很容易，再次信任很困难。</p>
+<h3 id="行动是重获信任的方法"><a href="#行动是重获信任的方法" class="headerlink" title="行动是重获信任的方法"></a>行动是重获信任的方法</h3><p>例：电商网站买书有破损去投诉，得到的答复是重新寄一本或是50元优惠券。客服没有纠缠对错问题，用极短的时间道歉，然后迅速的进入了行动。</p>
+<p><strong>行动会带来魅力，因为行动背后包含了一种”掌控感”</strong></p>
+<blockquote>
+<p>tony老师问，先生，想理成什么样的？</p>
+<p>换一个理发师，先生，看你的脸型、打扮和气质，建议你理成这样。</p>
+</blockquote>
+<p>人是一个什么样的物种？我们不见得是一个愿意事事都自己做主的物种，我们特别想跟随别人。只要你用行动证明你值得跟随就行了。</p>
+<blockquote>
+<ul>
+<li>跟朋友吃饭，问他想吃啥？随便，你定好了。虽然礼貌，但我们不见得喜欢这样的朋友。若说前两天我吃了一个地方特别好吃，保证你也说好吃，我来订座。</li>
+<li>本来晚上跟女朋友或老婆约好的，结果正要下班却临时要加班，那女朋友肯定也不是吃素的，跟你闹矛盾。那如果男人只关心对错的话就大错特错了。所以你需要在下班之后顺道买一束花，最好的姿势，拿嘴叼着进门，一切云开雾散，矛盾不会再有了。</li>
+</ul>
+</blockquote>
+<p>那为什么要信任他，为什么要跟随他呢？他就一定是正确的吗？所以什么叫正确？正确是靠行动本身达成。</p>
+<blockquote>
+<p>欧洲战争史上一队士兵凭借着一张完全不对的地图走出崇山峻岭。所以正是因为相信了它，然后无条件地信任他，跟他去协作，然后真的就把路走出来了。</p>
+</blockquote>
+<p><strong>总结</strong>：你犯了错，那你必须要道歉，而且要补偿，这样才公平。但是光有补偿是不够的，你还必须行动，然后体现对事情的掌控感，这样才聪明。既公平又聪明，你才能够重新获得信任。</p>
+<h3 id="特殊信用"><a href="#特殊信用" class="headerlink" title="特殊信用"></a>特殊信用</h3><p>凡事都有例外，有些人做了错事，大家会觉得他是无心的，并不会放在心上。心理学家称它为特殊信用，翻译成大白话就是人品。那如何积累特殊信用？</p>
+<ol>
+<li><p>建立领导力</p>
+<blockquote>
+<p>什么是领导力？简单说就是你身边的人不知道怎么回事，就是那么信任你、愿意跟随你。</p>
+<p>如何建立领导力？浙大教授胡海岚做过一个实验，让等级不同的老鼠在同一根管子里对头走，那肯定是等级低的老鼠让路。但对等级低的老鼠大脑做了改动后，且经过6次，就会一直不让，大步流星的走过。</p>
+<p>因此，领导力这东西特别简单，就是带队伍打6次胜仗就可以了。</p>
+</blockquote>
+</li>
+<li><p>保持行动的逻辑一致性</p>
+<blockquote>
+<p>简单说就是你是个什么人，你就一直保持你是一个什么样的人。</p>
+<p>比如说诸葛亮能摆空城计，就是因为司马懿知道诸葛一生不冒险。</p>
+<p>如果你想做一个有信用的人，平时不要随口说这样的话：有机会聚，下次有机会一起吃个饭，不要以为对方听不出口气中的搪塞，重要的不是吃没吃这个饭，而是在降低你的特殊信用</p>
+</blockquote>
+</li>
+<li><p>悼词美德</p>
+<blockquote>
+<ul>
+<li>简历美德：就是你在找工作时，你在向人介绍自己时，希望别人高看自己一眼的时候，你写进入的那些东西，比如当如班长，熟练什么技能，在什么公司工作过等。再多的丰功伟绩，只要有助于你的社会竞争力，这都叫简历美德。</li>
+<li>悼词美德：就是说当人死后，别人称赞你的话，那时肯定不会说熟练使用Excel，因为这些竞争力已经没有用了，别人会搜肠刮肚地找那些能够留在这个世界上的价值，比如说正直，乐于助人等</li>
+</ul>
+<p>因此，积累自己的特殊信用，就是让自己的朋友在夸自己的时候，有的说，而且众口一词。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="五、怎样找到一份合适的工作"><a href="#五、怎样找到一份合适的工作" class="headerlink" title="五、怎样找到一份合适的工作"></a>五、怎样找到一份合适的工作</h2><p>找工作的关键不是把简历当作考卷，而是把价值传递出去。</p>
+<h3 id="拆解任务"><a href="#拆解任务" class="headerlink" title="拆解任务"></a>拆解任务</h3><p>找到那个特定的人看中自己，要找到这个人其实不难，通过”<strong>六度空间理论</strong>“(只要是人类社会当中的一员不管你是什么社会地位、什么财富状况，你距离任意一个其他人中间所需要通过的节点不会超过五个)我们可以找到任何人，难的是这中间的五个人会不会帮你。要让这些人帮我们，第一招是拆解任务：</p>
+<p>​    <strong>什么是工作能力，工作能力的本质就是能把一个宏大的目标，拆成一堆小目标，而且马上就能动手做。</strong></p>
+<p>​    特斯拉的老板埃隆•马斯克有个巨大的目标是把一百万人送上火星生活。以现在的技术能力，送一个人上火星，美国政府算过一笔账，是100亿美元。那要送一百万人上去，就得把这个价格降下来，降到50万美元，这样一个普通的中产阶级就可以承担的起。100亿到50万，降了2万倍，20000=20*10*100。</p>
+<ol>
+<li>成本降低20倍，现在一个火箭大概送五六个人，那把火箭做大，一次性送一百</li>
+<li>成本再降10倍，民营企业干一件事情把效率提升十倍，是有可能的</li>
+<li>最后这100倍，现在发火箭，上天后火箭就解体，那就回收火箭</li>
+</ol>
+<p>所以，怎么找到第一个人，直接到阿里门口堵马云？错了，错的不在于你的勇气和想象力，错在没有把问题拆解。我们应该先找到一个已经在里面工作的人，了解内部情况(论坛，前员工的微信群)，什么样的论坛，什么样的群最应该去找的？校友。因为大家都希望自己的学校更好，有一个帮你的原初动力。在美国硅谷，最想进的公司应该就是苹果，但在苹果工作人比较多的不是离苹果最近最好的大学——斯坦福大学，而是圣荷西州立大学，这是一所普通的大学，因为校友的力量是强大的。</p>
+<h3 id="产品化"><a href="#产品化" class="headerlink" title="产品化"></a>产品化</h3><p>张小龙的三不主义：<strong>不骚扰、不感动、不迎合</strong>(背后就是把产品做好，让产品自己释放价值，你就会成为我的用户并向其他人传播)。</p>
+<p>让产品本身说话。很多男孩在追女孩时，总想拿着花，点着蜡烛，然后对女生说做我女朋友吧。这就是骚扰，这就是感动，这就是迎合。为什么？因为你想要一个反馈，你给对方制造了压力，那对方没想好的时候，只好拒绝你。那聪明的男孩子怎么做呢？就是把自己做成一个产品。比如说，经常看个电影把影评、感受发给对方，我可没有追你，我只是跟你交流一下。就是最后没有成功，你好在不会死在当场，你好歹为自己留下了很多余地，你有机会慢慢积累自己产品的价值。</p>
+<h3 id="先上车，再换位置"><a href="#先上车，再换位置" class="headerlink" title="先上车，再换位置"></a>先上车，再换位置</h3><p>如何找到一个合适的工作，关键点在于”合适”二字。其实加入一家大公司，刚开始第一步最好的职位是客服，原因如下：</p>
+<ol>
+<li>最便捷、最快速地了解这家公司的所有业务线</li>
+<li>公司客户的意见没小事，各个部门都很重视，可以鸡毛当令箭，去敲各部门的门，这是一个很好的机会</li>
+<li>肯干客服的人少，如果你自信是一个优秀的人，脱颖而出那是必然的</li>
+</ol>
+<p>最后用《孙子兵法》的一句话来总结：不可胜在己，可胜在敌。意思是我们想打败敌人，自己说了不算，是因为敌人自己不中用、不行才败的嘛。那我们就需要保持那种不可被战胜的状态，永远不要输光手里的牌。</p>
+<h2 id="六、怎样逼自己成为一个上进的人"><a href="#六、怎样逼自己成为一个上进的人" class="headerlink" title="六、怎样逼自己成为一个上进的人"></a>六、怎样逼自己成为一个上进的人</h2><p>这个世界娇惯我们的人太多，我们需要有什么东西来逼迫自己。可能大家都会听到”别人家的孩子”，就是指这些人特别自觉，从来不用父母逼迫，什么事都能非常有自制力的完成。但这样的人少之又少。就像郎朗，其实小时候练琴都是他爹逼的。</p>
+<h3 id="设计一个上进模型"><a href="#设计一个上进模型" class="headerlink" title="设计一个上进模型"></a>设计一个上进模型</h3><p><strong>人生所有上瘾的事，在你第一次接触时其实都是不舒服的</strong>。比如说游戏，刚开始你也承受极大的认知负担，这个游戏的世界是怎样的？规则是如何？我怎样玩才能赢？但你仔细想想，所有让你上瘾的事，背后都有一种强大的商业力量，这是一种运营的力量，设计的力量，拉住你的手一路把你引进去。所以你觉得自己的自制力不行，不要过于责备，这不是你错，有太多的人在背后设计你。</p>
+<p>既然游戏能做到，那我们完全可以借鉴它来设计自己。主要分为四个部分：设计上进环境、寻求外部监督、获得不确定反馈和选择长远职业阶梯。</p>
+<h3 id="设计上进环境"><a href="#设计上进环境" class="headerlink" title="设计上进环境"></a>设计上进环境</h3><p>古有孟母三迁，好环境可以造就一个人。而且中国大环境下，不管是乡村还是城市，都是在鼓励好好学习，将来考上大学长出息。还有即使有些父母自己境遇一般，不能算是很成功的人，但对孩子的冀望、叮嘱那都是很高要求的。</p>
+<p>判断自己所处的环境是对还是不对的思考工具：</p>
+<ul>
+<li>傻瓜指数：仔细想想多长时间之前的自己是一个傻瓜。指数越小越好，指数越小，说明你的环境越对</li>
+<li>朋友指数：仔细想想身边优秀的新朋友有多少？这两个词可以自己定义，你觉得他优秀，OK；你觉得这是新朋友，OK。只要你生命中优秀的新朋友越多，你的朋友指数也就越高，你所处的环境也越好。</li>
+</ul>
+<h3 id="寻求外部监督"><a href="#寻求外部监督" class="headerlink" title="寻求外部监督"></a>寻求外部监督</h3><p><strong>绑架自己</strong>。</p>
+<p>就拿玩游戏来讲，其实很多人不是一开始就爱玩游戏，但是身边的人在玩，你要是不玩就会觉得自己格格不入，被这个社交圈给抛弃了，所以产生了一种被”绑架”的感觉。</p>
+<p>企业为什么要做品牌？是为了卖更多的产品给消费者吗？实则不然。做品牌就是为了让自己”被绑架”，让社会监督自己的成本更低。你看，一个企业一年投入几个亿来做广告，要是产品质量不过关，所有人都会拿放大镜看你，让企业不敢干坏事，那社会自然会奖励一个好企业。这才是品牌的价值。</p>
+<p>如果你想做一件让别人佩服的事，第一件事是先让自己被绑架。</p>
+<p>我们的人生经常会喜欢那些让我们自由自在的东西，而讨厌那些约束我们的东西，实则不然。比如飞机上不能用手机。</p>
+<h3 id="获得不确定反馈"><a href="#获得不确定反馈" class="headerlink" title="获得不确定反馈"></a>获得不确定反馈</h3><p>所有的人都是被反馈喂养出来的。是上进给表扬，不上进给批评，也就是所谓的正反馈和负反馈吗？当然不是，这是训练小狗的模式。训练人最有效的反馈方式是<strong>不确定的反馈</strong>。就是你做了一件事，得到什么结果当它不确定的时候，它的魅力最大。</p>
+<p>比如说朋友圈发了一条动态，你不知道谁会点赞，谁会评论，所以你心中有就会有些许期待，正是这种不确定性勾引你不断地回去查看。</p>
+<p>还有就是创业的人很少再回去上班，因为市场给的不确定性魅力太大，而不是每个月固定的工资。</p>
+<h3 id="选择长远职业阶梯"><a href="#选择长远职业阶梯" class="headerlink" title="选择长远职业阶梯"></a>选择长远职业阶梯</h3><p>优秀游戏设计的反馈机制有个重要技巧是<strong>把反馈切碎</strong>，变成一层一层的阶梯，可以拾级而上，目标清晰。比如先去挣一个金币，再去拿一个宝贝，等等。</p>
+<p><strong>心流：我们干一件事突然把时间忘了，沉浸其中并享受喜悦。</strong></p>
+<p>比如你看电影，打游戏，在做一件非常有创造力、而且自己又得心应手的工作时，经常能够体会到这种心流的状态。</p>
+<p>那如何给自己设计心流呢？<strong>控制技能挑战比</strong>！就是要控制好你做事的那个难度，如果太难容易放弃，如果太容易太无聊了也容易放弃，所以关键是要调整得刚刚好。</p>
+<h3 id="怎样选择一个好职业"><a href="#怎样选择一个好职业" class="headerlink" title="怎样选择一个好职业"></a>怎样选择一个好职业</h3><p>好职业的特征：有非常绵密的、能清晰看到的、每一步都给你反馈的阶梯。</p>
+<p>有一些职业能逼迫人成为一个上进的人：</p>
+<ul>
+<li>医生：你治好了一个病人，人家立马给你反馈；你做了一个漂亮的手术，身边的医生和护士为你鼓掌；一个人出院了，对你千恩万谢。所以这种反馈来的及时、细碎、绵密，而且无穷无尽的可以拾级登高。</li>
+<li>厨师：每次端菜，你是不知道客人的反应，这取决于很多因素：食材、环境、客人的口味。这就是一个不确定的反馈。</li>
+</ul>
+<p>总结：所有好行业都有这么一个特征，就是有无穷无尽的台阶，而且随时随地能给从业者好的、坏的、不确定的及时反馈，这都是好职业。</p>
+<h2 id="七、怎样成为一个受欢迎的人"><a href="#七、怎样成为一个受欢迎的人" class="headerlink" title="七、怎样成为一个受欢迎的人"></a>七、怎样成为一个受欢迎的人</h2><p>心理学界有一个词，叫”冒充者综合征”，这是一种自我否定倾向。表示很多已经有成就的人，他们觉得自己不配，觉得自己是骗子。</p>
+<p>乡愿，德之贼也。什么叫乡愿，就是那种天天想讨好别人的人，一点原则都没有的人。德之贼也，你偷了天下人的德行。</p>
+<p>受欢迎方法是：<strong>我重视你，不是我喜欢你，而是我重视你</strong>。</p>
+<blockquote>
+<p>你可以不喜欢一个人，但是你没有理由不尊重他。一个人对什么人是永远不可能原谅的？不是一个跟他利益冲突的人，不是一个打过他骂过他的人，也不是一个不喜欢他的人，而一定是一个鄙视过他的人。所以，永远不要不尊重或者明显的鄙视一个人，因为它永远不会原谅你。</p>
+</blockquote>
+<p>表达重视的三个方法：</p>
+<p><strong>亲自表达</strong>：有两个要点：务必诚恳；<strong>务必亲手，坚决不要假手于人</strong></p>
+<p><strong>平等待人</strong>：伦理学有个概念，叫”无知之幕”，意思是我们每一个人都是带着自己原来的社会角色在决定自己的观点，换句话说就是”屁股决定脑袋”。比如我们在争论很多社会政策时，富翁会说国家应该减税，穷人会说应该对富人多征税，吵来吵去是永远没有结果，怎么办？伦理学就提供了这么一个思考工具。所以，我们怎么可能向每一个人表达平等的尊重呢？解决方案就是在你遇到每一个人，你就在它的背后降下一道”无知之幕”，你权当没有看到他的社会角色，没有看到拥有的资源、资质和他的长相，你就把他当作一个普普通通的人。你看他做出一点成就就去祝贺一下。</p>
+<p><strong>请人帮个忙</strong>：如果你想交一个朋友，那就请他帮一个忙。求人帮一个忙，其实就是在表达对他的重视，对他的尊重。我们中国人的观念是尽量少麻烦别人，但你若稍微观察一下身边，那些最受欢迎的人，是不是经常求人帮一个忙？</p>
+<p>人世间发生的一切事情都可以归纳为两种游戏：有限游戏和无限游戏。</p>
+<blockquote>
+<p>有限游戏：只要有胜负输赢、确定边界的，比如小到一盘棋，大到一场战争</p>
+<p>无限游戏：需要我们不断地推动边界，我们所有的努力就是要让这个游戏持续下去。<strong>人生就是无限游戏</strong>。但文学作品或者电影，总想把人生这个无限游戏包装成有限的样子，不然就无法结束。但我们清楚，我们的人生玩的是没有边界的无限游戏。</p>
+</blockquote>
+<p>那为什么你要成为一个受欢迎的人？因为我们永远不知道在往外扩展的时候，谁能帮到我们。</p>
+<p>无论你在什么样的局面里，无论你身边的人看起来怎么分成三六九等，你永远不会知道谁在什么时候会冲出来帮你一把。所以成为一个受欢迎的人，这不是在讨好这个世界，是你想过好自己的一生，把这局无限游戏玩下去的必要条件。</p>
+<h2 id="八、怎样成为一个不纠结的人"><a href="#八、怎样成为一个不纠结的人" class="headerlink" title="八、怎样成为一个不纠结的人"></a>八、怎样成为一个不纠结的人</h2><p>越纠结越容易犯错：比如去火锅店，往小料台一站，各种酱，牛肉酱、芝麻酱等。最后拿回来的是一碗大杂烩。但往往单一的酱料更好吃。</p>
+<p><strong>终点站</strong>：终局思维，就是你不要漫无目的地想什么长远，你就想你要到达的那个终点站是什么，把它想清楚，然后倒推回来，决定你当下、此刻的行动。</p>
+<p><strong>指南针</strong>：是一个长期不变，有价值的尺度。人生是没有地图的，情况随时在变，在瞬息万变的今天，我们要抓住不变的东西。如森林里的水，养动物还是植物？</p>
+<p><strong>金丝雀</strong>：用最具体的东西来衡量你的底线，把它表达出来。如在煤矿里对瓦斯气体敏感的金丝雀，范•海伦乐队的不允许出现一颗棕色巧克力豆，商人的诚信，普通人不能杠杆投资等。</p>
+<p><strong>白衬衫</strong>：一个最终会走向成功的人，在选择这件事上，第一件该做的事就是减少选择。比如扎克伯格的灰T恤，乔布斯的黑T恤。因为在这件事上耗费精力不值得。老子《道德经》里提到”少则得，多则惑”</p>
+<p>什么事情值得选：两条原则</p>
+<blockquote>
+<ol>
+<li>减少你的选择，把你的注意力资源省下来用在你最擅长的事情上</li>
+<li>把那些不做的选择交给那些更加专业的人，很多事情是不值得选的</li>
+</ol>
+</blockquote>
+<p>真正值得花时间精力去选择的是：在什么样的环境，跟什么样的人在一起，这是人生最大的变量。</p>
+<p>人生很多重要的关头，上什么学校，选什么专业，进哪家公司，和谁过一辈子……这些重要的选择在真做选择的那一天，我们往往会觉得很平淡，但正是这样一些惊心动魄的选择，决定了我们的一生。</p>
+<p><strong>人生是有一个定义的，你现在的人生其实就是你此前所有选择的总和</strong>。</p>
+<h2 id="九、怎样让孩子爱学习？"><a href="#九、怎样让孩子爱学习？" class="headerlink" title="九、怎样让孩子爱学习？"></a>九、怎样让孩子爱学习？</h2><h3 id="建立迅捷的反馈机制"><a href="#建立迅捷的反馈机制" class="headerlink" title="建立迅捷的反馈机制"></a>建立迅捷的反馈机制</h3><p>首先怎样让孩子爱学习是一个伪命题，人的大脑天生就是一部学习机器。那为什么有些孩子表现出来的就是不爱学习呢？原因有两点：</p>
+<ol>
+<li>人类的知识，它作为一种负担实在是越来越大(博士后毕业都快40了)</li>
+<li>文字，创造文字的人和写下文字的人和我们要学习这些文字的人，它过程是不一样的(几百万年的学习能力，用几十年来适应文字学习)。阅读障碍症的人，智力和学习能力都是没有问题的，只是不善于阅读</li>
+</ol>
+<p>借鉴游戏，给他迅捷的反馈，如1200页的书，每天撕20页看。</p>
+<p>那如何戒掉游戏？玩的时候把声音关掉。原因很简单，因为游戏其实就是一套反馈系统，你任何一个动作，游戏都会给你非常多的反馈，声音就是众多反馈中的一条。一旦把声音关掉，游戏给你的反馈的刺激度就弱了</p>
+<p>自我介绍的套路：</p>
+<ol>
+<li>我叫什么名字</li>
+<li>我为什么来到这个现场，是因为什么人，还是因为什么事</li>
+<li>我有什么资源可以帮到大家</li>
+<li>我需要得到大家的什么帮助</li>
+</ol>
+<h3 id="给予有边界的奖励，不给惩罚性的限制"><a href="#给予有边界的奖励，不给惩罚性的限制" class="headerlink" title="给予有边界的奖励，不给惩罚性的限制"></a>给予有边界的奖励，不给惩罚性的限制</h3><p>不知你有没有发现，游戏从不惩罚，不会因为你打不过这个boss，就把你的装备给没收了。这是因为人受不了那种挫败感。</p>
+<p>当我们在批评孩子时，我们以为是就事论事，但对于孩子来说不是的。你以为你惩罚的是某个错误的点，但是结果呢，你惩罚的是整个行为。可是有些孩子的行为确实不像话，就不能惩罚他一下吗？不是能不能，而是没必要。有个词叫<strong>温和的坚定</strong>，比如在商场，她就是要买一个玩具，可是家里已经很多了，然后她就大哭大闹，家长怎么办？这个时候两种方法都不对：1.骂她，训斥她；2. 妥协，给她买。也就是说不是斗争就是逃避。其实还有第三种选择，这时你蹲下来，用眼神平视她，不管她怎么闹，用小小的声音，注意是用小小的声音，跟她说：宝宝，你是不是感觉不舒服呀？家里已经有很多这样的玩具的呀，咱们不在公众场合闹好不好，咱们回家一起去玩玩具好不好。</p>
+<p>有边界的奖励：比如游戏的装备在特定的情况下发挥作用。钢琴练的好，奖励玩手机一小时，等等。</p>
+<h3 id="保持在线状态"><a href="#保持在线状态" class="headerlink" title="保持在线状态"></a>保持在线状态</h3><p>你的孩子在学习，你希望他爱上学习，你自己也应该保持在线状态，也就是以身作则，言传身教。</p>
+<p>中国人养孩子顺口溜：妈妈生，姥姥养，姥爷天天菜市场，爷爷奶奶来欣赏，爸爸回家就上网。</p>
+<h3 id="重新理解童年和孩子"><a href="#重新理解童年和孩子" class="headerlink" title="重新理解童年和孩子"></a>重新理解童年和孩子</h3><p>什么是童年？童年期，是整个文明，整个社会，对于人生一个阶段的赦免。赦免什么？赦免你进入一种规定性的轨道。你可以用自己的生命力去做那些奇思妙想的自由探索。所以童年是人类解决风险的应对方案。</p>
+<p>对孩子的新定义：TA不是在我们出生后很多年才出生的人，他们是我们离开这个世界之后，还要活很多年的人。</p>
+<h2 id="十、为什么今天还要读《论语》"><a href="#十、为什么今天还要读《论语》" class="headerlink" title="十、为什么今天还要读《论语》"></a>十、为什么今天还要读《论语》</h2><p>孔子诞辰：9月28日。其实孔子就是一个普通的民办中学的校长，而且还是在二线城市，但他的思想成果堪称至圣先师。</p>
+<p>每个人的学习目标：君子人格</p>
+<p>什么是中庸：是把所有那些原则脑子里你把它融为一体，然后落实到日常行动中，而且做得非常好，这叫中庸。</p>
+<h2 id="十一、怎样成一个处理矛盾的高手"><a href="#十一、怎样成一个处理矛盾的高手" class="headerlink" title="十一、怎样成一个处理矛盾的高手"></a>十一、怎样成一个处理矛盾的高手</h2><p>生意人思维：用市场定价的方式正确评估别人的价值，让双方的价值都得到一个公正的体现</p>
+<p>银行家思维：跳出现有格局，下一盘更大的棋。因为所有的矛盾都是因为在同一个格局里</p>
+<p>实干者思维：假设让三五个人在一起，如果讨论一件事，总会有分歧。但若让他们干一件事，会出奇的一致。为什么观念上总是冲突，行动上又老是一致？因为表达观点没有成本，行动是有成本的，要负责任的。所以需要把观念的事转化为行动的事。</p>
+<blockquote>
+<p>假设：假设这两个词很神奇，因为这背后发生了一个非常重大的转换。就是观念变成了行动，和对方就不是面对面了，而是让对方转过身来和自己面对一样的困难，来帮我出主意。”如果你是我，你会怎么办”，经常这么说的人往往是化解矛盾的高手，一个会假设的人，一个会经常让别人站在他的立场上去想问题的人，就是化解矛盾的高手。</p>
+<p>在反驳对方之前先加一段话，就是先复述一下对方的观点，复述完对方的观点，连对方都觉得你复述的对，再反驳。充分理解对方是怎么想的，只要有这个先决条件，你会发现大量的矛盾根本就不存在了。</p>
+<p>例子：送孩子上幼儿园，一个远一点，好一点；一个近一点，质量差一点？选哪个？两代人的观点可能不一致，谁来做决定？谁负责接送就谁来决定。</p>
+<p>大锅饭分饭：让一个人来分，但他最后拿饭</p>
+</blockquote>
+<p>建筑师思维：”橙汁测试”，好酒店虽然张嘴在谈钱，但背后折射的是既愿意克服困难、满足客户需求的酒店，也是一个边界感特别清楚的酒店。他的边界是通过清晰地给你呈现成本和代价来实现的。</p>
+<p>把原本混乱的空间划出清晰的边界，明确跨过边界的成本。</p>
+<h2 id="十二、我听过的三条最好的建议"><a href="#十二、我听过的三条最好的建议" class="headerlink" title="十二、我听过的三条最好的建议"></a>十二、我听过的三条最好的建议</h2><h3 id="让知识穿过你的身体"><a href="#让知识穿过你的身体" class="headerlink" title="让知识穿过你的身体"></a>让知识穿过你的身体</h3><p>如果这个知识对你有用，你一定做了两件事情。第一，你尝试对听到的东西做了自己的思考；第二，你跟别人表达出来了，或者用到了你的生活中。让知识穿过了你的身体，这就是你的财富。</p>
+<h3 id="回到那些不变的东西"><a href="#回到那些不变的东西" class="headerlink" title="回到那些不变的东西"></a>回到那些不变的东西</h3><p>这个世界是一层一层地建起来的，底下的东西不变，上面的东西做微小的调整。</p>
+<p>最重要的根本不是追逐那些变化的东西，而是回到那些不变的东西。</p>
+<p>一定要回到大家已经有共同认知的、不变的东西，然后用最新的、属于这个时代的技术观念和设计对它进行改造。</p>
+<h3 id="复杂的事简单做，简单的事重复做"><a href="#复杂的事简单做，简单的事重复做" class="headerlink" title="复杂的事简单做，简单的事重复做"></a>复杂的事简单做，简单的事重复做</h3><p>这个世界只有做最简单的事情，才容易做好，才顺应了这个分工的趋势。</p>
+<p>做一件简单且有价值的事，第一，按照一个相对规定的格式去做，然后做很长时间的积累，就能成就一个伟大的东西。第二，按照固定的节奏去做，这个好处也是无穷的。第三，要长期积累，决定了就一直干下去，因为时间是公平的。</p>
+<p>我们每个人都想找这个世界要公平，这个世界最公平的东西就是时间的力量。</p>
+<h3 id="真诚是通往一切道理"><a href="#真诚是通往一切道理" class="headerlink" title="真诚是通往一切道理"></a>真诚是通往一切道理</h3><p>以上分别解决了两个问题：干什么和怎么干，那接下来的问题是，假设我的能力不足，怎么办？答案很简单，就是真诚。</p>
+<p>没有任何道路可以通向真诚，真诚本身就是道路。</p>
+<p>工作中，面对一个任务不知道怎么做，坦白地告诉周围的人，我现在能力不足，这就是真诚。</p>
+<p>生活在这个时代的人，面对的核心难题就是三个：第一，世界变化太快；第二，自己想法太多；第三，评估下来好像能力不足。</p>
+<p>世界变化太快怎么办？回到那些不变的东西。</p>
+<p>自己想法太多怎么办？做简单的事，按照固定的节奏，长时间地做下去。</p>
+<p>能力不足怎么办？意识到不足，就用真诚这把锤子锤开一条出路。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/04/22/%E6%88%91%E6%98%AF%E4%B8%AA%E5%A6%88%E5%A6%88%EF%BC%8C%E6%88%91%E9%9C%80%E8%A6%81%E9%93%82%E9%87%91%E5%8C%85/" rel="next" title="我是个妈妈，我需要铂金包">
+                  <i class="fa fa-chevron-left"></i> 我是个妈妈，我需要铂金包
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/05/02/%E7%BB%99%E4%BA%BA%E5%A5%BD%E5%8D%B0%E8%B1%A1%E7%9A%84%E7%A7%98%E8%AF%80/" rel="prev" title="给人好印象的秘诀">
+                  给人好印象的秘诀 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%80%8E%E6%A0%B7%E6%8A%8A%E8%87%AA%E5%B7%B1%E5%AB%81%E5%87%BA%E5%8E%BB"><span class="nav-number">1.</span> <span class="nav-text">一、怎样把自己嫁出去</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B9%E8%B1%AB%E6%89%8D%E6%98%AF%E6%9C%80%E7%B3%9F%E7%B3%95%E7%9A%84"><span class="nav-number">1.1.</span> <span class="nav-text">犹豫才是最糟糕的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%B0%E4%BB%A3%E5%A9%9A%E5%A7%BB%E6%98%AF%E5%8D%8F%E5%90%8C%E8%BF%9B%E5%8C%96%E7%9A%84%E9%82%80%E7%BA%A6"><span class="nav-number">1.2.</span> <span class="nav-text">现代婚姻是协同进化的邀约</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9A%E5%87%BA%E9%80%89%E6%8B%A9%EF%BC%8C%E5%8B%87%E6%95%A2%E8%A1%8C%E5%8A%A8"><span class="nav-number">1.3.</span> <span class="nav-text">做出选择，勇敢行动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%80%8E%E6%A0%B7%E5%81%9A%E4%B8%80%E4%B8%AA%E6%9B%B4%E6%9C%89%E4%BB%B7%E5%80%BC%E7%9A%84%E4%BA%BA"><span class="nav-number">2.</span> <span class="nav-text">二、怎样做一个更有价值的人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AF%E4%BD%8F%E9%92%B1%E5%AE%B9%E6%98%93%E5%81%9A%E9%94%99%E5%86%B3%E7%AD%96"><span class="nav-number">2.1.</span> <span class="nav-text">盯住钱容易做错决策</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%BA%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4"><span class="nav-number">2.2.</span> <span class="nav-text">人的本质是一段时间</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%80%8E%E6%A0%B7%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%86%B2%E5%8A%A8%E7%9A%84%E4%BA%BA"><span class="nav-number">3.</span> <span class="nav-text">三、怎样成为一个不冲动的人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%8F%E4%BB%81%E6%A0%B8%E4%B8%BA%E5%95%A5%E6%80%BB%E6%98%AF%E8%B5%A2"><span class="nav-number">3.1.</span> <span class="nav-text">杏仁核为啥总是赢</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%80%8E%E6%A0%B7%E9%87%8D%E6%96%B0%E8%8E%B7%E5%BE%97%E5%88%AB%E4%BA%BA%E7%9A%84%E4%BF%A1%E4%BB%BB"><span class="nav-number">4.</span> <span class="nav-text">四、怎样重新获得别人的信任</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E8%B0%85%E5%BE%88%E5%AE%B9%E6%98%93%EF%BC%8C%E5%86%8D%E6%AC%A1%E4%BF%A1%E4%BB%BB%E5%BE%88%E5%9B%B0%E9%9A%BE"><span class="nav-number">4.1.</span> <span class="nav-text">原谅很容易，再次信任很困难</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%8A%A8%E6%98%AF%E9%87%8D%E8%8E%B7%E4%BF%A1%E4%BB%BB%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">行动是重获信任的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E4%BF%A1%E7%94%A8"><span class="nav-number">4.3.</span> <span class="nav-text">特殊信用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%80%8E%E6%A0%B7%E6%89%BE%E5%88%B0%E4%B8%80%E4%BB%BD%E5%90%88%E9%80%82%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="nav-number">5.</span> <span class="nav-text">五、怎样找到一份合适的工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%86%E8%A7%A3%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.1.</span> <span class="nav-text">拆解任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A7%E5%93%81%E5%8C%96"><span class="nav-number">5.2.</span> <span class="nav-text">产品化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E4%B8%8A%E8%BD%A6%EF%BC%8C%E5%86%8D%E6%8D%A2%E4%BD%8D%E7%BD%AE"><span class="nav-number">5.3.</span> <span class="nav-text">先上车，再换位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E6%80%8E%E6%A0%B7%E9%80%BC%E8%87%AA%E5%B7%B1%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E4%B8%8A%E8%BF%9B%E7%9A%84%E4%BA%BA"><span class="nav-number">6.</span> <span class="nav-text">六、怎样逼自己成为一个上进的人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E4%B8%8A%E8%BF%9B%E6%A8%A1%E5%9E%8B"><span class="nav-number">6.1.</span> <span class="nav-text">设计一个上进模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E4%B8%8A%E8%BF%9B%E7%8E%AF%E5%A2%83"><span class="nav-number">6.2.</span> <span class="nav-text">设计上进环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BB%E6%B1%82%E5%A4%96%E9%83%A8%E7%9B%91%E7%9D%A3"><span class="nav-number">6.3.</span> <span class="nav-text">寻求外部监督</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%8F%8D%E9%A6%88"><span class="nav-number">6.4.</span> <span class="nav-text">获得不确定反馈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E9%95%BF%E8%BF%9C%E8%81%8C%E4%B8%9A%E9%98%B6%E6%A2%AF"><span class="nav-number">6.5.</span> <span class="nav-text">选择长远职业阶梯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E6%A0%B7%E9%80%89%E6%8B%A9%E4%B8%80%E4%B8%AA%E5%A5%BD%E8%81%8C%E4%B8%9A"><span class="nav-number">6.6.</span> <span class="nav-text">怎样选择一个好职业</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E6%80%8E%E6%A0%B7%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84%E4%BA%BA"><span class="nav-number">7.</span> <span class="nav-text">七、怎样成为一个受欢迎的人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E6%80%8E%E6%A0%B7%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E4%B8%8D%E7%BA%A0%E7%BB%93%E7%9A%84%E4%BA%BA"><span class="nav-number">8.</span> <span class="nav-text">八、怎样成为一个不纠结的人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E3%80%81%E6%80%8E%E6%A0%B7%E8%AE%A9%E5%AD%A9%E5%AD%90%E7%88%B1%E5%AD%A6%E4%B9%A0%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">九、怎样让孩子爱学习？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E8%BF%85%E6%8D%B7%E7%9A%84%E5%8F%8D%E9%A6%88%E6%9C%BA%E5%88%B6"><span class="nav-number">9.1.</span> <span class="nav-text">建立迅捷的反馈机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99%E4%BA%88%E6%9C%89%E8%BE%B9%E7%95%8C%E7%9A%84%E5%A5%96%E5%8A%B1%EF%BC%8C%E4%B8%8D%E7%BB%99%E6%83%A9%E7%BD%9A%E6%80%A7%E7%9A%84%E9%99%90%E5%88%B6"><span class="nav-number">9.2.</span> <span class="nav-text">给予有边界的奖励，不给惩罚性的限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E6%8C%81%E5%9C%A8%E7%BA%BF%E7%8A%B6%E6%80%81"><span class="nav-number">9.3.</span> <span class="nav-text">保持在线状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%AB%A5%E5%B9%B4%E5%92%8C%E5%AD%A9%E5%AD%90"><span class="nav-number">9.4.</span> <span class="nav-text">重新理解童年和孩子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BB%8A%E5%A4%A9%E8%BF%98%E8%A6%81%E8%AF%BB%E3%80%8A%E8%AE%BA%E8%AF%AD%E3%80%8B"><span class="nav-number">10.</span> <span class="nav-text">十、为什么今天还要读《论语》</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E6%80%8E%E6%A0%B7%E6%88%90%E4%B8%80%E4%B8%AA%E5%A4%84%E7%90%86%E7%9F%9B%E7%9B%BE%E7%9A%84%E9%AB%98%E6%89%8B"><span class="nav-number">11.</span> <span class="nav-text">十一、怎样成一个处理矛盾的高手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E6%88%91%E5%90%AC%E8%BF%87%E7%9A%84%E4%B8%89%E6%9D%A1%E6%9C%80%E5%A5%BD%E7%9A%84%E5%BB%BA%E8%AE%AE"><span class="nav-number">12.</span> <span class="nav-text">十二、我听过的三条最好的建议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A9%E7%9F%A5%E8%AF%86%E7%A9%BF%E8%BF%87%E4%BD%A0%E7%9A%84%E8%BA%AB%E4%BD%93"><span class="nav-number">12.1.</span> <span class="nav-text">让知识穿过你的身体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E5%88%B0%E9%82%A3%E4%BA%9B%E4%B8%8D%E5%8F%98%E7%9A%84%E4%B8%9C%E8%A5%BF"><span class="nav-number">12.2.</span> <span class="nav-text">回到那些不变的东西</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%9A%84%E4%BA%8B%E7%AE%80%E5%8D%95%E5%81%9A%EF%BC%8C%E7%AE%80%E5%8D%95%E7%9A%84%E4%BA%8B%E9%87%8D%E5%A4%8D%E5%81%9A"><span class="nav-number">12.3.</span> <span class="nav-text">复杂的事简单做，简单的事重复做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%9F%E8%AF%9A%E6%98%AF%E9%80%9A%E5%BE%80%E4%B8%80%E5%88%87%E9%81%93%E7%90%86"><span class="nav-number">12.4.</span> <span class="nav-text">真诚是通往一切道理</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="假装文艺">
+  <p class="site-author-name" itemprop="name">假装文艺</p>
+  <div class="site-description" itemprop="description">你必须努力奔跑，才能留在原地</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">假装文艺</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v5.4.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.4.0.js"></script>
+
+<script src="/js/motion.js?v=7.4.0.js"></script>
+
+
+<script src="/js/schemes/muse.js?v=7.4.0.js"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.4.0.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+<script src="/js/local-search.js?v=7.4.0.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

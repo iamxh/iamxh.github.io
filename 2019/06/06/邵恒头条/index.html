@@ -1,16 +1,689 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ partial('_macro/post.swig', {post: page}) }}
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","width":250,"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="中国如何突围？二战以后的世界经济格局：  富经济：美国、欧洲；优势在于有大量的资本，高新技术，先进的商业模式 穷经济：40年前的中国  两者像是一高一低的海平面，无交集。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="邵恒头条">
+<meta property="og:url" content="http://iamxh.github.io/2019/06/06/%E9%82%B5%E6%81%92%E5%A4%B4%E6%9D%A1/index.html">
+<meta property="og:site_name" content="不要香菜">
+<meta property="og:description" content="中国如何突围？二战以后的世界经济格局：  富经济：美国、欧洲；优势在于有大量的资本，高新技术，先进的商业模式 穷经济：40年前的中国  两者像是一高一低的海平面，无交集。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-06-06T01:26:25.000Z">
+<meta property="article:modified_time" content="2019-09-22T10:35:13.657Z">
+<meta property="article:author" content="假装文艺">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="http://iamxh.github.io/2019/06/06/%E9%82%B5%E6%81%92%E5%A4%B4%E6%9D%A1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>邵恒头条 | 不要香菜</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不要香菜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-tags&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://iamxh.github.io/2019/06/06/%E9%82%B5%E6%81%92%E5%A4%B4%E6%9D%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="假装文艺">
+      <meta itemprop="description" content="你必须努力奔跑，才能留在原地">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不要香菜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">邵恒头条
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-06 09:26:25" itemprop="dateCreated datePublished" datetime="2019-06-06T09:26:25+08:00">2019-06-06</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-22 18:35:13" itemprop="dateModified" datetime="2019-09-22T18:35:13+08:00">2019-09-22</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="中国如何突围？"><a href="#中国如何突围？" class="headerlink" title="中国如何突围？"></a>中国如何突围？</h3><p><strong>二战以后的世界经济格局</strong>：</p>
+<ul>
+<li>富经济：美国、欧洲；优势在于有大量的资本，高新技术，先进的商业模式</li>
+<li>穷经济：40年前的中国</li>
+</ul>
+<p>两者像是一高一低的海平面，无交集。</p>
+<span id="more"></span>
+
+<p>💹💹💹</p>
+<p>中国的改革开放，把穷这个劣势转化成优势，吸引了各种投资(增加就业、学习机会)。</p>
+<p>过去40年里，全球经济里发生最大的事就是中国的崛起。原因是穷经济和富经济的壁垒打通了，一打通，穷就成了竞争力。</p>
+<p>↔️↔️↔️</p>
+<p><strong>打通后的变化</strong>：</p>
+<ul>
+<li><p>富经济不教你，反而堵你</p>
+</li>
+<li><p>穷的竞争力在消失</p>
+<blockquote>
+<ol>
+<li>生产成本提高(人力、生产资料)</li>
+<li>其它穷经济效仿</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<p><strong>突围的方式</strong>：</p>
+<ul>
+<li>向上突围：中国制造的成本提高，那么不再做低成本产品，转而尖端产品(需提升创新能力)</li>
+<li>向下突围：拥抱穷经济国家的市场，输出基础设施建设</li>
+</ul>
+<h3 id="特斯拉会破产吗？"><a href="#特斯拉会破产吗？" class="headerlink" title="特斯拉会破产吗？"></a>特斯拉会破产吗？</h3><p>特斯拉的商业策略：</p>
+<ul>
+<li><p>自上而下的产品策略：直奔豪华车</p>
+<blockquote>
+<p>建立口碑和影响力、收益高</p>
+</blockquote>
+</li>
+<li><p>没有中间商：价格统一、透明</p>
+</li>
+</ul>
+<p>出现的瓶颈：</p>
+<ul>
+<li>走向中端市场：需求大，价格低，量产能力需提高</li>
+<li>售后服务：运营成本高</li>
+</ul>
+<h3 id="为什么荷兰是下一个欧洲门户？"><a href="#为什么荷兰是下一个欧洲门户？" class="headerlink" title="为什么荷兰是下一个欧洲门户？"></a>为什么荷兰是下一个欧洲门户？</h3><ul>
+<li><p>英语文化</p>
+<blockquote>
+<ol>
+<li>70%的硕士课都是全英语授课</li>
+<li>荷兰语专业的地位快跟古生物系差不多了</li>
+</ol>
+</blockquote>
+</li>
+<li><p>国际化</p>
+<blockquote>
+<ol>
+<li>全球联结指数（(跨国投资、移民和游客、国际电话时长等)），荷兰第一</li>
+<li>物流发达</li>
+<li>全球农产品出口大国，美国第一，荷兰第二。通过高科技，别人一公斤产9吨土豆，它产20吨。</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<h3 id="什么才是成功的商业模式？"><a href="#什么才是成功的商业模式？" class="headerlink" title="什么才是成功的商业模式？"></a>什么才是成功的商业模式？</h3><p>增长：收入-成本&gt;0</p>
+<p>有两种类型的收入和支出：</p>
+<ul>
+<li>资本性：【收入】融资、卖房子、卖地获得的钱；【支出】盖楼、建厂房等</li>
+<li>运营性：【收入】通过运营赚的钱；【支出】工资、水电费等</li>
+</ul>
+<p>若资本性的收入减去支出还有剩余的话，实现了资本驱动的增长，是”<strong>花钱增长</strong>“</p>
+<p>若运营性的收入减去支出还有剩余的话，这种增长，是”<strong>挣钱增长</strong>“</p>
+<p>无论是城市，还是公司，在增长过程中往往都要实现转型，从花钱增长，向挣钱增长转型。</p>
+<p><strong>关键点：两种收入和支出，不能混在一起算。资本收入是资本收入，运营收入是运营收入。</strong></p>
+<p>如果一个城市或者一家公司，长期在用资本性的剩余，来覆盖运营的缺口，这绝对不是一个可持续的状态。</p>
+<p>商业的成功，必须要满足两个条件：</p>
+<ul>
+<li>融到足够的资本才去建桥</li>
+<li>过桥费要大于维护桥的费用</li>
+</ul>
+<p>luckin coffee的商业模式：</p>
+<ul>
+<li><p>降低运营成本</p>
+<blockquote>
+<ol>
+<li>战略重心放在小门店上(快取店)</li>
+<li>数据驱动运营(必须用App购买，省去点单和收银，还能把交易数据跟供应链打通)</li>
+</ol>
+</blockquote>
+</li>
+<li><p>提升收入</p>
+<blockquote>
+<p>把咖啡当抓手，卖其他饮品和小吃</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="人口老龄化真的是经济负担吗？"><a href="#人口老龄化真的是经济负担吗？" class="headerlink" title="人口老龄化真的是经济负担吗？"></a>人口老龄化真的是经济负担吗？</h3><p>对老龄化的担忧总结起来无非是认为，老年人既没有消费需求，也不创造价值，这肯定会成为年轻人的负担。</p>
+<ol>
+<li><p>老年人并非没有消费需求，要撬动老年群体需求这件事，其实有个内在矛盾。这个矛盾就是既要精准地抓住老年群里，又不能让他们觉得，你卖的东西是专门给这个群体设计的。</p>
+<blockquote>
+<p>误区一：认为老年人只在乎产品的实用性和便利性</p>
+<ul>
+<li>同样在意身份认同，如把助听器设计成耳机；紧急呼叫设计到手表里</li>
+</ul>
+<p>误区二：认为科技产品只适合年轻人</p>
+<ul>
+<li>科技产品带来便捷，更是老年人的需求。如共享类产品</li>
+</ul>
+</blockquote>
+</li>
+<li><p>日本一个叫蒲公英介护中心的地方，引入一个特殊的运行机制，就是自己发行了一种代币，类似于游戏币。没参与一项康复活动，就能赚到一定数量的代币。主要是因为老年人退休后，钱都交由子女保管，自己衣食无忧，无所事事，导致他们的生活失去了价值，每天都是混吃等死状态。</p>
+<blockquote>
+<p>其实，老年人自己要创造价值的意愿很强，而社会需要做的，就是给这个群体提供一个合适的机会和环境</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="能源变革会改变地缘政治吗？"><a href="#能源变革会改变地缘政治吗？" class="headerlink" title="能源变革会改变地缘政治吗？"></a>能源变革会改变地缘政治吗？</h3><p>当下全球能源格局：</p>
+<ol>
+<li>能源资源过剩，能出口的：中东、北非、俄罗斯以及一些前苏联国家</li>
+<li>相对中立，能源能自给自足：北美和拉丁美洲</li>
+<li>需要高度进口：中国、日本、印度、欧洲的一些国家</li>
+</ol>
+<p>现在有一个重要的趋势，就是我们正在经历一个能源转型的时期，我们正在从依赖化石燃料的阶段，转型到依赖可再生清洁能源的新阶段。</p>
+<p>现在能源领域的竞争，争夺的不再是资源，而是技术的制高点。谁能研究出储能的技术，谁能研发出新能源终端的技术，谁就能成为能源行业的新宠。而占据这样的技术制高点的国家，往往是那些有急切需求想摆脱石油进口的国家，如中国。这些国家最有紧迫感，因此也是最早进入新能源科技的研发。</p>
+<h3 id="非洲会成为下一个”世界工厂”吗？"><a href="#非洲会成为下一个”世界工厂”吗？" class="headerlink" title="非洲会成为下一个”世界工厂”吗？"></a>非洲会成为下一个”世界工厂”吗？</h3><ul>
+<li>预测：在未来的50年之内，非洲制造就会像今天的中国制造一样，无所不在，甚至很有可能替代很多中国公司的产品。</li>
+<li>现象：Zara品牌，有些吊牌上已经写有”埃塞俄比亚制造”</li>
+<li>依据：</li>
+</ul>
+<ol>
+<li><strong>人力成本便宜</strong>。也就是劳动力多，人力的市场供给充足。在2035年这一年，在非洲会增加1亿符合工作年龄的劳动力人口，而很多亚洲国家，都已进入人口倒金字塔时代。</li>
+<li><strong>政策支持</strong>。类似于中国当时的改革开放，而在2018年，非洲自由贸易区成立，这是自WTO成立以来参与国家最多的一个自贸区，有44个非洲国家，这个巨大的政策组织变革就是区域一体化。从人口看，有12亿，相当于一个中国；从消费市场看，有2.5万亿美金。这么大的需求一定会刺激当地政府简化通关手续，建设基础设施等。</li>
+<li><strong>产能能跟上吗</strong>？中国人又勤奋又能吃苦，要没有996也做不起世界工厂，但其实中国人走到现在这个阶段，也是经历了一个陡峭的学习曲线的。</li>
+</ol>
+<ul>
+<li>补充：世界格局已发生变化，中国不能再固守以前的优势，而是寻找新的突破点。其实现在在非洲设立工厂最多的就是中国企业。</li>
+</ul>
+<h3 id="中国富养、美国穷养的新生代"><a href="#中国富养、美国穷养的新生代" class="headerlink" title="中国富养、美国穷养的新生代"></a>中国富养、美国穷养的新生代</h3><ul>
+<li><p>现象：国潮品牌风兴起，一些小时候的品牌在复苏，如大白兔奶糖、回力运动鞋等</p>
+</li>
+<li><p>本质：买国货背后的群体，大部分是95后和00后。从2019年开始，这批人会成为全球最大的消费群体，这个趋势会持续到2030年。</p>
+</li>
+<li><p>原因：</p>
+<blockquote>
+<p>一、中国人比美国人更能花钱</p>
+<p>二、中国人比美国人更不爱存钱</p>
+</blockquote>
+<p>成长环境：中国的95后和00后处于经济快速增长期，加入WTO享受全球化红利。独生子女居多，格外受宠，家庭地位高；而美国也有两方面原因，一是2008年的经济危机，对家庭冲击非常强烈。二是大学教育格外昂贵，一毕业往往就欠着10几万的学费要还。</p>
+</li>
+</ul>
+<h3 id="什么才是真正的公平？"><a href="#什么才是真正的公平？" class="headerlink" title="什么才是真正的公平？"></a>什么才是真正的公平？</h3><p>哈佛大学，捐赠人的孩子有更高的录取率；高考，用一场考试决定一个人的一生，公不公平？</p>
+<p>其实大家在讨论公平的时候，经常混淆三个概念：公平、公正、公开。要讨论一个机制公不公平，首先应该是用一把尺子来衡量公平这件事。</p>
+<ul>
+<li><p>公平的核心：不是用了哪一把尺子，而是用同一把尺子</p>
+<blockquote>
+<p>妈妈对哥哥说：你怎么不把东西分给弟弟吃？哥哥说：因为弟弟也没有分给我啊。妈妈说：他不一样，他是弟弟。</p>
+<p>这就是不公平。妈妈用了两把尺子：用分享丈量哥哥，用独享丈量弟弟。</p>
+<p>而高考就是用”分数”这唯一的尺子丈量所有学生。那为什么要用分数，而不用素质，美德，甚至是扶老人过街的次数作为尺子呢？这就涉及到公正。</p>
+</blockquote>
+</li>
+<li><p>公正：就是选哪一把尺子来丈量。这个是有关价值观，它的本质不是”你对我错”的问题，它的本质是”谁有权做选择”的问题。每一所学校都有权利定义自己的”公正”</p>
+<blockquote>
+<p>哈佛手上拿着一组套尺子：分数很重要，社会活动很重要，体育特长很重要，背景多元化也很重要。</p>
+<p>因为哈佛是我的，不是你的。我对哈佛的成功、失败负责。</p>
+<p>高考在对总体公平的基础上添加一些额外的公正因子，如省级名额分配来弥补地域教育水平不公；用各地单独出卷，来弥补地域知识结构的不公平。</p>
+</blockquote>
+</li>
+<li><p>公开：就是把丈量的过程展示给公众，让同意公正者，监督公平</p>
+</li>
+</ul>
+<h3 id="苹果不及时跟进5G就落后吗？"><a href="#苹果不及时跟进5G就落后吗？" class="headerlink" title="苹果不及时跟进5G就落后吗？"></a>苹果不及时跟进5G就落后吗？</h3><p>新技术都有一个无法逾越的<strong>成熟期</strong>。体现在如下几点：</p>
+<ol>
+<li>手机产品：需要两到三年才能达到成熟</li>
+<li>网络覆盖率：初期5G信号弱，就会加大射频功率或切换到4G</li>
+<li>耗电：在覆盖率低的情况下，加大射频和来回切换网络都会加大耗电，不只是一个5G模块的问题，从芯片、天线到用电方案，这么一个浩大的工程没几年设计和调试是不可能到成熟期的。</li>
+<li>组网模式：当前大部分手机是NSA(Non-Standalone)，也就是非独立组网，只能算是一种过渡技术，5G基站接入的还是4G网络；未来的5G应该是SA，独立组网的，跟4G网络完全独立开，所以有可能你的手机无法连上基站。（明年1月1号开始，只支持NSA模式的手机不能获得入网许可证）</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/05/30/%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB/" rel="next" title="高效学习与快速阅读">
+                  <i class="fa fa-chevron-left"></i> 高效学习与快速阅读
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/07/20/%E9%80%BB%E8%BE%91%E5%86%B3%E5%AE%9A%E5%B7%A5%E4%BD%9C%E4%B8%8A%E9%99%90/" rel="prev" title="逻辑决定工作上限">
+                  逻辑决定工作上限 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E5%9B%BD%E5%A6%82%E4%BD%95%E7%AA%81%E5%9B%B4%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">中国如何突围？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%96%AF%E6%8B%89%E4%BC%9A%E7%A0%B4%E4%BA%A7%E5%90%97%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">特斯拉会破产吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%8D%B7%E5%85%B0%E6%98%AF%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%AC%A7%E6%B4%B2%E9%97%A8%E6%88%B7%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">为什么荷兰是下一个欧洲门户？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E6%88%90%E5%8A%9F%E7%9A%84%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">什么才是成功的商业模式？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%BA%E5%8F%A3%E8%80%81%E9%BE%84%E5%8C%96%E7%9C%9F%E7%9A%84%E6%98%AF%E7%BB%8F%E6%B5%8E%E8%B4%9F%E6%8B%85%E5%90%97%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">人口老龄化真的是经济负担吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%BD%E6%BA%90%E5%8F%98%E9%9D%A9%E4%BC%9A%E6%94%B9%E5%8F%98%E5%9C%B0%E7%BC%98%E6%94%BF%E6%B2%BB%E5%90%97%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">能源变革会改变地缘政治吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E6%B4%B2%E4%BC%9A%E6%88%90%E4%B8%BA%E4%B8%8B%E4%B8%80%E4%B8%AA%E2%80%9D%E4%B8%96%E7%95%8C%E5%B7%A5%E5%8E%82%E2%80%9D%E5%90%97%EF%BC%9F"><span class="nav-number">7.</span> <span class="nav-text">非洲会成为下一个”世界工厂”吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E5%9B%BD%E5%AF%8C%E5%85%BB%E3%80%81%E7%BE%8E%E5%9B%BD%E7%A9%B7%E5%85%BB%E7%9A%84%E6%96%B0%E7%94%9F%E4%BB%A3"><span class="nav-number">8.</span> <span class="nav-text">中国富养、美国穷养的新生代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%85%AC%E5%B9%B3%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">什么才是真正的公平？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8B%B9%E6%9E%9C%E4%B8%8D%E5%8F%8A%E6%97%B6%E8%B7%9F%E8%BF%9B5G%E5%B0%B1%E8%90%BD%E5%90%8E%E5%90%97%EF%BC%9F"><span class="nav-number">10.</span> <span class="nav-text">苹果不及时跟进5G就落后吗？</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="假装文艺">
+  <p class="site-author-name" itemprop="name">假装文艺</p>
+  <div class="site-description" itemprop="description">你必须努力奔跑，才能留在原地</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">假装文艺</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v5.4.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.4.0.js"></script>
+
+<script src="/js/motion.js?v=7.4.0.js"></script>
+
+
+<script src="/js/schemes/muse.js?v=7.4.0.js"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.4.0.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+<script src="/js/local-search.js?v=7.4.0.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

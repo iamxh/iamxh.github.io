@@ -1,16 +1,579 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ partial('_macro/post.swig', {post: page}) }}
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","width":250,"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="经济学思维我们看到的社会，只要有人在，就会有需求在； 只要有两个以上的人在，他们的需求就会不一样，需求不一样就会有交易； 有交易就会产生对货币的需求，有货币就有劣币驱逐良币的现象，有货币就有宏观经济的波动，有通货膨胀，有通货紧缩； 有交易就有信息不对称，有信息不对称，就会有中间商； 有人在的地方就有情绪、就有舆论、就有外部性。于是整个战俘营里面的现象，跟战俘营外面所发生的现象就是一致的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="经济学入门">
+<meta property="og:url" content="http://iamxh.github.io/2019/05/02/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="不要香菜">
+<meta property="og:description" content="经济学思维我们看到的社会，只要有人在，就会有需求在； 只要有两个以上的人在，他们的需求就会不一样，需求不一样就会有交易； 有交易就会产生对货币的需求，有货币就有劣币驱逐良币的现象，有货币就有宏观经济的波动，有通货膨胀，有通货紧缩； 有交易就有信息不对称，有信息不对称，就会有中间商； 有人在的地方就有情绪、就有舆论、就有外部性。于是整个战俘营里面的现象，跟战俘营外面所发生的现象就是一致的。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-02T14:46:52.000Z">
+<meta property="article:modified_time" content="2019-05-02T14:47:39.526Z">
+<meta property="article:author" content="假装文艺">
+<meta property="article:tag" content="经济学">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="http://iamxh.github.io/2019/05/02/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%85%A5%E9%97%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>经济学入门 | 不要香菜</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不要香菜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-tags&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://iamxh.github.io/2019/05/02/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%85%A5%E9%97%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="假装文艺">
+      <meta itemprop="description" content="你必须努力奔跑，才能留在原地">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不要香菜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">经济学入门
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-02 22:46:52 / 修改时间：22:47:39" itemprop="dateCreated datePublished" datetime="2019-05-02T22:46:52+08:00">2019-05-02</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="经济学思维"><a href="#经济学思维" class="headerlink" title="经济学思维"></a>经济学思维</h4><p>我们看到的社会，只要有人在，就会有需求在；</p>
+<p>只要有两个以上的人在，他们的需求就会不一样，需求不一样就会有交易；</p>
+<p>有交易就会产生对货币的需求，有货币就有劣币驱逐良币的现象，有货币就有宏观经济的波动，有通货膨胀，有通货紧缩；</p>
+<p>有交易就有信息不对称，有信息不对称，就会有中间商；</p>
+<p>有人在的地方就有情绪、就有舆论、就有外部性。于是整个战俘营里面的现象，跟战俘营外面所发生的现象就是一致的。</p>
+<span id="more"></span>
+
+<h4 id="增长的本质"><a href="#增长的本质" class="headerlink" title="增长的本质"></a>增长的本质</h4><p>经济增长的本质是信息的增长，或者说秩序的增长。</p>
+<ul>
+<li><p>经济是什么意思？</p>
+<blockquote>
+<p>经济是人类积累知识技术来创造产品的一个系统。</p>
+</blockquote>
+</li>
+<li><p>秩序有什么价值？</p>
+<blockquote>
+<p>原子的排列方式、部件的组合方式都是”秩序”，比如布加迪威龙从250万美元到破铜烂铁，为什么重量没有变价值却消失了。</p>
+<p>还有手机有很多电子元件构成，只有把这些电子元件按照一定的”秩序”排列组合起来才能正常工作，才有价值。</p>
+</blockquote>
+</li>
+<li><p>产品是什么？</p>
+<blockquote>
+<ul>
+<li>产品是想象力的实体化。比如两种苹果</li>
+<li>想象力交易逆差：进出口贸易其实也是一种想象力的交易，有时一个国家实现了一般意义上的贸易顺差，但在想象力交易的意义上是逆差。例：智利像韩国出口46亿，主要是精炼铜和非精炼铜，同年，韩国向智利出口25亿，主要是汽车，汽车配件等。所以智利在传统意义上实现了贸易顺差，但在想象力的出口上却是逆差。</li>
+<li>一个国家是富有还是经济发展水平高不能混为一谈，有很多富有但经济水平不高的国家，比如一些严重依赖石油资源的国家。能推动经济发展的不是消费实力，而是人们把梦想变为现实的能力。简单说，经济发展不是购买力而是创造力</li>
+</ul>
+</blockquote>
+</li>
+<li><p>产品有什么价值？</p>
+<blockquote>
+<p>产品可以让我们获取别人头脑里的知识技能和想象力。比如牙膏、飞机，烤箱</p>
+</blockquote>
+</li>
+<li><p>创造复杂产品的能力并不是平均分布的</p>
+<blockquote>
+<p>更简单的产业，需要更少知识技术的产业；更复杂的产业，需要更多的知识技术的产业。小块的知识技术更容易在世界范围内传播，而制造复杂产品的知识技术则必须有一个很大很复杂的网络积累。比如很多国家都有出口衣物，但出口光学仪器的就很少。但<strong>并不是说只有某些国家有出口的东西就说明该国家具备更复杂的产业</strong>，比如铀矿石。需要通过三个指标来分析这个国家产业和产品的数据：<strong>多元性、普遍性、国家多样性</strong>。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="牛奶可乐经济学"><a href="#牛奶可乐经济学" class="headerlink" title="牛奶可乐经济学"></a>牛奶可乐经济学</h4><p>一、成本效益原则</p>
+<p>成本效益原则是经济学的源头，它具体是指，只有当行动的收益不低于成本时，才应该这么做。</p>
+<ol>
+<li><p>消费者在个人信息决策时的成本效应原则</p>
+<p>按理说，如果知道所有的信息，决策会更科学合理。但这是一种理想状态，收集所有信息的成本跟依靠这些信息做出决策的收益不一定成正比，我们需要学习根据有限的信息进行决策。</p>
+<p>市场上信息不对称的情况比比皆是，可以根据卖方的行为来推测产品的关键信息，用”难于造假原则”做判断，就是说对手如果因为成本太高而不愿造假，这时候他所显示的信号就是真实可靠的。</p>
+<p>例子：两只狗打架、电视广告、女性穿高跟鞋</p>
+</li>
+<li><p>生产厂商在做决策时，也会考虑成本效益原则</p>
+<p>案例：汽车加热器，冰箱灯</p>
+</li>
+</ol>
+<p>二、供求关系原理</p>
+<p>在市场经济条件下，商品的供求关系和价格之间总是互相影响、互相制约的。在其他条件不变的情况下，当一种商品的供给大于需求时，商品价格下降，当供给小于需求时，商品价格上升。</p>
+<p>案例：酒吧里一杯清水4块钱，而花生米是免费的。女模特的收入通常比男模特要高</p>
+<h4 id="理性乐观派"><a href="#理性乐观派" class="headerlink" title="理性乐观派"></a>理性乐观派</h4><p>大概每过十年，人类社会就会出现一个新的世界性问题。60年代是恐慌人口爆炸和全球饥荒，70年代是资源枯竭，80年代是酸雨，90年代是瘟疫，21世界是全球变暖。中间还充斥着各种坏消息，甚至科幻电影还来凑热闹，如2012，终结者，后天等。所以有人的观点就是所有的一切都是人类的贪婪，是咎由自取，需要退回到原始社会。而作者的观点是这些人是错的，人类要继续过现在的生活。制胜法宝—— 交易。</p>
+<ol>
+<li><p>交易是一种没来头的冲动</p>
+<blockquote>
+<p>人类的交易似乎是天生的，是一个逻辑的起点。例：猩猩宝宝和人类宝宝；达尔文第一次登上火地岛。</p>
+</blockquote>
+</li>
+<li><p>自给自足就是贫困</p>
+<blockquote>
+<p>有了交易就必然出现”社会分工”，一个人只做一件自己最最擅长的事情，再用做这件事创造的收益去换取他人生产的其他物品。</p>
+<p>所谓穷，就是不能把自己的时间，卖到足够高的价格，用来购买自己所需的服务。所谓富，就是不光能够买到自己需要的基础服务，还能买到自己想要的独特服务。</p>
+</blockquote>
+</li>
+<li><p>集体大脑是一块超强的移动硬盘</p>
+<blockquote>
+<p>人类是地球上唯一一种可以用自身基因之外的载体来保存信息的生物。</p>
+<p>提升信息安全性；信息越来越多时会产生交融、碰撞，产生新的信息。</p>
+</blockquote>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag"># 经济学</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/05/02/%E7%BB%99%E4%BA%BA%E5%A5%BD%E5%8D%B0%E8%B1%A1%E7%9A%84%E7%A7%98%E8%AF%80/" rel="next" title="给人好印象的秘诀">
+                  <i class="fa fa-chevron-left"></i> 给人好印象的秘诀
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/05/08/%E9%87%91%E9%92%B1%E4%B8%8D%E8%83%BD%E4%B9%B0%E4%BB%80%E4%B9%88/" rel="prev" title="金钱不能买什么">
+                  金钱不能买什么 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%8F%E6%B5%8E%E5%AD%A6%E6%80%9D%E7%BB%B4"><span class="nav-number">1.</span> <span class="nav-text">经济学思维</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E9%95%BF%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-number">2.</span> <span class="nav-text">增长的本质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%9B%E5%A5%B6%E5%8F%AF%E4%B9%90%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="nav-number">3.</span> <span class="nav-text">牛奶可乐经济学</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%90%86%E6%80%A7%E4%B9%90%E8%A7%82%E6%B4%BE"><span class="nav-number">4.</span> <span class="nav-text">理性乐观派</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="假装文艺">
+  <p class="site-author-name" itemprop="name">假装文艺</p>
+  <div class="site-description" itemprop="description">你必须努力奔跑，才能留在原地</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">假装文艺</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v5.4.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.4.0.js"></script>
+
+<script src="/js/motion.js?v=7.4.0.js"></script>
+
+
+<script src="/js/schemes/muse.js?v=7.4.0.js"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.4.0.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+<script src="/js/local-search.js?v=7.4.0.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

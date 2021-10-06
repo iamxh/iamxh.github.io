@@ -1,16 +1,534 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ partial('_macro/post.swig', {post: page}) }}
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","width":250,"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="再版序清凉夏日，素心如莲，光阴好似一阕古词，风流简净，千回百转。此刻，晴空湛蓝，江天浩荡，人生多少悲戚苍茫之事，皆藏于巍然青山，滔滔逝水。 自序多少姹紫嫣红，都被菲薄的光阴给无端辜负；多少赏心乐事，都被莫名地关在寻常院落里。既然留不住青春，错过了昨天的那枝花，又怎能再错过今朝的这壶茶。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="世间所有相遇，都是久别重逢">
+<meta property="og:url" content="http://iamxh.github.io/2018/05/16/%E4%B8%96%E9%97%B4%E6%89%80%E6%9C%89%E7%9B%B8%E9%81%87%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B9%85%E5%88%AB%E9%87%8D%E9%80%A2/index.html">
+<meta property="og:site_name" content="不要香菜">
+<meta property="og:description" content="再版序清凉夏日，素心如莲，光阴好似一阕古词，风流简净，千回百转。此刻，晴空湛蓝，江天浩荡，人生多少悲戚苍茫之事，皆藏于巍然青山，滔滔逝水。 自序多少姹紫嫣红，都被菲薄的光阴给无端辜负；多少赏心乐事，都被莫名地关在寻常院落里。既然留不住青春，错过了昨天的那枝花，又怎能再错过今朝的这壶茶。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-05-16T01:31:01.000Z">
+<meta property="article:modified_time" content="2018-05-16T01:46:36.000Z">
+<meta property="article:author" content="假装文艺">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="http://iamxh.github.io/2018/05/16/%E4%B8%96%E9%97%B4%E6%89%80%E6%9C%89%E7%9B%B8%E9%81%87%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B9%85%E5%88%AB%E9%87%8D%E9%80%A2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>世间所有相遇，都是久别重逢 | 不要香菜</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不要香菜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-tags&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://iamxh.github.io/2018/05/16/%E4%B8%96%E9%97%B4%E6%89%80%E6%9C%89%E7%9B%B8%E9%81%87%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B9%85%E5%88%AB%E9%87%8D%E9%80%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="假装文艺">
+      <meta itemprop="description" content="你必须努力奔跑，才能留在原地">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不要香菜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">世间所有相遇，都是久别重逢
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-16 09:31:01 / 修改时间：09:46:36" itemprop="dateCreated datePublished" datetime="2018-05-16T09:31:01+08:00">2018-05-16</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="再版序"><a href="#再版序" class="headerlink" title="再版序"></a>再版序</h4><p>清凉夏日，素心如莲，光阴好似一阕古词，风流简净，千回百转。此刻，晴空湛蓝，江天浩荡，人生多少悲戚苍茫之事，皆藏于巍然青山，滔滔逝水。</p>
+<h4 id="自序"><a href="#自序" class="headerlink" title="自序"></a>自序</h4><p>多少姹紫嫣红，都被菲薄的光阴给无端辜负；多少赏心乐事，都被莫名地关在寻常院落里。既然留不住青春，错过了昨天的那枝花，又怎能再错过今朝的这壶茶。</p>
+<span id="more"></span>
+
+<h4 id="心如明镜，不惹尘埃"><a href="#心如明镜，不惹尘埃" class="headerlink" title="心如明镜，不惹尘埃"></a>心如明镜，不惹尘埃</h4><p>一切有为法，如梦幻泡影，如露亦如电，应作如是观。</p>
+<p>心动则万物动，于是体会到世间万般苦；心不动，则不伤，清净自在，喜乐平常。</p>
+<h4 id="茶缘，一个从容不惊的过客"><a href="#茶缘，一个从容不惊的过客" class="headerlink" title="茶缘，一个从容不惊的过客"></a>茶缘，一个从容不惊的过客</h4><p>所有的相聚，都是因了昨日的萍散，所有的离别，都是为了寻找最后的归宿。品茶，就是为了品一盏纯粹、一盏美好、一盏慈悲，我们就在茶的安静、茶的湿润里，从容不惊地老去……</p>
+<h4 id="山水，那段宿命的前因"><a href="#山水，那段宿命的前因" class="headerlink" title="山水，那段宿命的前因"></a>山水，那段宿命的前因</h4><p>时光弹指，刹那芳华，已是十年之久。</p>
+<p>层峦叠翠，林泉淙淙，竹影清风，佛塔林立，最喜山间的绿，明眼洗心。</p>
+<p>是什么时候开始，爱得懦弱，恨得卑屈，哭得遮掩，笑得虚伪？我钦佩那些为爱低首，为爱不顾一切的人。只有他们，敢于将内心的潮湿拉到太阳底下，狠狠地晾晒。</p>
+<h4 id="且看明月，又有几回圆"><a href="#且看明月，又有几回圆" class="headerlink" title="且看明月，又有几回圆"></a>且看明月，又有几回圆</h4><p>往事就是这样，你想要记起的时候，发觉原来已经忘得差不多了。你想要忘记的时候，却一直在心头萦绕，让你心绪难安。往事太多，不是所有的过去都值得你去怀想。许多记忆的碎片在夜色里发出凌厉的光，会将我们仅存的一点完整也割伤。在模糊的印象里，我们又何须在意遗忘或是忆起？</p>
+<h4 id="请和我，在红尘相爱一场"><a href="#请和我，在红尘相爱一场" class="headerlink" title="请和我，在红尘相爱一场"></a>请和我，在红尘相爱一场</h4><p>青石铺就的小径，长满了积岁的苔藓，细雨还有伶仃的秋叶落在上面，萧索的潮湿更添几分诗意。</p>
+<h4 id="日月两盏灯，春秋一场梦"><a href="#日月两盏灯，春秋一场梦" class="headerlink" title="日月两盏灯，春秋一场梦"></a>日月两盏灯，春秋一场梦</h4><p>甚至感恩尘来尘往里，一寸微弱的阳光，一个细小的片断，一点浅薄的记忆。因为这些，都可以装进行囊，填充我们的人生。也许装订成书，也许编织成梦，也许散落成灰，只要那些个瞬间，真实地属于过我们。</p>
+<h4 id="三生石上，姻缘几世"><a href="#三生石上，姻缘几世" class="headerlink" title="三生石上，姻缘几世"></a>三生石上，姻缘几世</h4><p>生怕梦里的云烟会迷离了双眼。怕有一天，彼此重见时，早已更换了旧时容颜。</p>
+<h4 id="人间花木，莫染我情田"><a href="#人间花木，莫染我情田" class="headerlink" title="人间花木，莫染我情田"></a>人间花木，莫染我情田</h4><p>纵然是万里青山、百代长河，也会随着时光的流逝而有所转变，留下命定的痕迹。唯有那剪清月，圆了又缺，缺了又圆，一如既往，不为谁而更改半点容颜。</p>
+<p>光阴是刀，所以这世间，没有一段不被宰割的人生。</p>
+<h4 id="茫茫世海，广植净莲"><a href="#茫茫世海，广植净莲" class="headerlink" title="茫茫世海，广植净莲"></a>茫茫世海，广植净莲</h4><p>事实上，一个爱惜自己的人，才能爱惜别人；一个可以拯救自己的人，才能够拯救别人。</p>
+<p>岁月催人老，过往的片断，就像一张张泛黄的黑白照片。</p>
+<h4 id="放下包袱，即可成佛"><a href="#放下包袱，即可成佛" class="headerlink" title="放下包袱，即可成佛"></a>放下包袱，即可成佛</h4><p>让我们放下肩上沉重的布袋，放下生活的包袱，忘记应该忘记的，留住可以留住的。如果你曾经有过锋芒，那么在刺眼的阳光下，请你遮掩，不要再去挥舞利刃；如果你曾经有过暗伤，那么在宁静的月光下，请你掩藏，不要轻易揭开晾晒。既然都是旧事，就应该尘封在古老的角落，不被人打扰。让它们湮没在岁月的长河里，经过时光的磨砺，幻化为一沙一砾，不显山，不露水。</p>
+<h4 id="曲径通幽处，禅房花木深"><a href="#曲径通幽处，禅房花木深" class="headerlink" title="曲径通幽处，禅房花木深"></a>曲径通幽处，禅房花木深</h4><p>我曾经喜欢芍药花的另一个名字，叫将离。这个名字，有一种令人神伤的美丽，像一支哀婉的古曲，唱到最后，渐行渐远地让人好生不舍。</p>
+<p>人生最怕的就是分离，最痛心、最不舍的莫过于将离。十指相扣的手，缓缓地松开，深情相看的眼眸，瞬间就捕捉不到彼此的神韵；转身的刹那，连落泪都是无力的，这就是将离的无奈。</p>
+<h4 id="一段风一流事，佳人独自知"><a href="#一段风一流事，佳人独自知" class="headerlink" title="一段风一流事，佳人独自知"></a>一段风一流事，佳人独自知</h4><p>人和人之间在一起相处的长短，在于缘分的深浅，当情淡爱薄之时，多深刻的诺言也会破灭。那时候，还有谁会陪着谁，在寒夜里促膝长谈，谈过眼云烟的情感，谈渐行渐远的繁华，谈彼此第一次为爱落下的泪滴。而后再度分别，各自仓促地走完人生逼仄的甬道，你有你的港湾，我有我的归宿。</p>
+<h4 id="深刻相逢，澹然相忘"><a href="#深刻相逢，澹然相忘" class="headerlink" title="深刻相逢，澹然相忘"></a>深刻相逢，澹然相忘</h4><p>多少人想要在滔滔世海中另辟蹊径，说好了纵浪到底，可每次都是雨打归舟。山水相娱，烟云散去，历史的墨迹已模糊不清，我们彼此在澹然中相忘，包括以往的山盟海誓。在不能终止的流光里，我们无法怪罪生命里有太多的错过，也许会辜负青春，却终究不会辜负宿命。都说人生如逆旅，就算有一天月迷津渡，依旧会有一枚守护我们的红叶，等候在季节的路口。</p>
+<p>其实，所有的澹然都是在纷欲中开始的，就像所有的相遇都在离别中结束。我们总是躲在自己酿造的华丽里，假装很幸福，时间久了，忘记了所有的不幸。好比一个谎言，说得次数多了，也成了真。可是烟雨再美丽，我们还是离不了阳光，了悟不是逃避，放下不是抽离。每个人都知道，前缘过往是你我都回不去的原乡，如果学不会相忘，就用一生作飘零。</p>
+<h4 id="高山插青云，碧水种莲花"><a href="#高山插青云，碧水种莲花" class="headerlink" title="高山插青云，碧水种莲花"></a>高山插青云，碧水种莲花</h4><p>时光的流转，不宜多说，一个低眉，一个转身，此刻的携手，就会成了明天的分道。</p>
+<p>山有山的诺言，水有水的柔情，人有人的使命。</p>
+<h4 id="是几时，龙袍换成袈裟"><a href="#是几时，龙袍换成袈裟" class="headerlink" title="是几时，龙袍换成袈裟"></a>是几时，龙袍换成袈裟</h4><p>我从来不是一个探秘者，总觉得所有的秘密，都是一道伤痂，你想知道答案，就意味着要揭开别人的伤痂，让早已停止疼痛的伤口再次疼痛，痛得无以复加。</p>
+<h4 id="春还在，人已天涯"><a href="#春还在，人已天涯" class="headerlink" title="春还在，人已天涯"></a>春还在，人已天涯</h4><p>一念起，万水千山皆有情。一念灭，沧海桑田已无心。</p>
+<p>佛，你准我今生圆梦，我听你来世说禅。</p>
+<h4 id="绣户侯门女，独卧青灯古佛旁"><a href="#绣户侯门女，独卧青灯古佛旁" class="headerlink" title="绣户侯门女，独卧青灯古佛旁"></a>绣户侯门女，独卧青灯古佛旁</h4><p>禅是什么？是在一个清凉的早晨，看一个老人，采摘院子里含露的茉莉；是在一个悠长的午后，看一群蚂蚁，在墙角下辛勤地觅食；是在一个日落的黄昏，看一群燕子，从山水间悠缓地归来；是在一个宁静的夜晚，看一盏孤灯，由亮渐渐地转淡的过程。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/05/15/Git%E5%A4%9A%E8%B4%A6%E5%8F%B7%E9%85%8D%E7%BD%AE/" rel="next" title="Git多账号配置">
+                  <i class="fa fa-chevron-left"></i> Git多账号配置
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2018/05/17/Git%E4%BD%BF%E7%94%A8%E5%AE%9D%E5%85%B8/" rel="prev" title="Git使用宝典">
+                  Git使用宝典 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%8D%E7%89%88%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">再版序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">自序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BF%83%E5%A6%82%E6%98%8E%E9%95%9C%EF%BC%8C%E4%B8%8D%E6%83%B9%E5%B0%98%E5%9F%83"><span class="nav-number">3.</span> <span class="nav-text">心如明镜，不惹尘埃</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8C%B6%E7%BC%98%EF%BC%8C%E4%B8%80%E4%B8%AA%E4%BB%8E%E5%AE%B9%E4%B8%8D%E6%83%8A%E7%9A%84%E8%BF%87%E5%AE%A2"><span class="nav-number">4.</span> <span class="nav-text">茶缘，一个从容不惊的过客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%B1%E6%B0%B4%EF%BC%8C%E9%82%A3%E6%AE%B5%E5%AE%BF%E5%91%BD%E7%9A%84%E5%89%8D%E5%9B%A0"><span class="nav-number">5.</span> <span class="nav-text">山水，那段宿命的前因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%94%E7%9C%8B%E6%98%8E%E6%9C%88%EF%BC%8C%E5%8F%88%E6%9C%89%E5%87%A0%E5%9B%9E%E5%9C%86"><span class="nav-number">6.</span> <span class="nav-text">且看明月，又有几回圆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%B7%E5%92%8C%E6%88%91%EF%BC%8C%E5%9C%A8%E7%BA%A2%E5%B0%98%E7%9B%B8%E7%88%B1%E4%B8%80%E5%9C%BA"><span class="nav-number">7.</span> <span class="nav-text">请和我，在红尘相爱一场</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A5%E6%9C%88%E4%B8%A4%E7%9B%8F%E7%81%AF%EF%BC%8C%E6%98%A5%E7%A7%8B%E4%B8%80%E5%9C%BA%E6%A2%A6"><span class="nav-number">8.</span> <span class="nav-text">日月两盏灯，春秋一场梦</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E7%94%9F%E7%9F%B3%E4%B8%8A%EF%BC%8C%E5%A7%BB%E7%BC%98%E5%87%A0%E4%B8%96"><span class="nav-number">9.</span> <span class="nav-text">三生石上，姻缘几世</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%BA%E9%97%B4%E8%8A%B1%E6%9C%A8%EF%BC%8C%E8%8E%AB%E6%9F%93%E6%88%91%E6%83%85%E7%94%B0"><span class="nav-number">10.</span> <span class="nav-text">人间花木，莫染我情田</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8C%AB%E8%8C%AB%E4%B8%96%E6%B5%B7%EF%BC%8C%E5%B9%BF%E6%A4%8D%E5%87%80%E8%8E%B2"><span class="nav-number">11.</span> <span class="nav-text">茫茫世海，广植净莲</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%94%BE%E4%B8%8B%E5%8C%85%E8%A2%B1%EF%BC%8C%E5%8D%B3%E5%8F%AF%E6%88%90%E4%BD%9B"><span class="nav-number">12.</span> <span class="nav-text">放下包袱，即可成佛</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B2%E5%BE%84%E9%80%9A%E5%B9%BD%E5%A4%84%EF%BC%8C%E7%A6%85%E6%88%BF%E8%8A%B1%E6%9C%A8%E6%B7%B1"><span class="nav-number">13.</span> <span class="nav-text">曲径通幽处，禅房花木深</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E6%AE%B5%E9%A3%8E%E4%B8%80%E6%B5%81%E4%BA%8B%EF%BC%8C%E4%BD%B3%E4%BA%BA%E7%8B%AC%E8%87%AA%E7%9F%A5"><span class="nav-number">14.</span> <span class="nav-text">一段风一流事，佳人独自知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%B1%E5%88%BB%E7%9B%B8%E9%80%A2%EF%BC%8C%E6%BE%B9%E7%84%B6%E7%9B%B8%E5%BF%98"><span class="nav-number">15.</span> <span class="nav-text">深刻相逢，澹然相忘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AB%98%E5%B1%B1%E6%8F%92%E9%9D%92%E4%BA%91%EF%BC%8C%E7%A2%A7%E6%B0%B4%E7%A7%8D%E8%8E%B2%E8%8A%B1"><span class="nav-number">16.</span> <span class="nav-text">高山插青云，碧水种莲花</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%AF%E5%87%A0%E6%97%B6%EF%BC%8C%E9%BE%99%E8%A2%8D%E6%8D%A2%E6%88%90%E8%A2%88%E8%A3%9F"><span class="nav-number">17.</span> <span class="nav-text">是几时，龙袍换成袈裟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%A5%E8%BF%98%E5%9C%A8%EF%BC%8C%E4%BA%BA%E5%B7%B2%E5%A4%A9%E6%B6%AF"><span class="nav-number">18.</span> <span class="nav-text">春还在，人已天涯</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%A3%E6%88%B7%E4%BE%AF%E9%97%A8%E5%A5%B3%EF%BC%8C%E7%8B%AC%E5%8D%A7%E9%9D%92%E7%81%AF%E5%8F%A4%E4%BD%9B%E6%97%81"><span class="nav-number">19.</span> <span class="nav-text">绣户侯门女，独卧青灯古佛旁</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="假装文艺">
+  <p class="site-author-name" itemprop="name">假装文艺</p>
+  <div class="site-description" itemprop="description">你必须努力奔跑，才能留在原地</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">假装文艺</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v5.4.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.4.0.js"></script>
+
+<script src="/js/motion.js?v=7.4.0.js"></script>
+
+
+<script src="/js/schemes/muse.js?v=7.4.0.js"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.4.0.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+<script src="/js/local-search.js?v=7.4.0.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

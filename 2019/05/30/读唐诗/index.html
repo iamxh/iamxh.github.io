@@ -1,16 +1,545 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ partial('_macro/post.swig', {post: page}) }}
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","width":250,"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="现在读到唐诗有多幸运？当时唐诗正在快速失传，据胡震亨估算，到他所处的年代（距唐朝已经八百年了），唐诗已经至少失传了一半。   被誉为“孤篇压全唐”的《春江花月夜》，它的作者张若虚，一生的诗作只留下了两首。 《登鹳雀楼》的作者王之涣，一生诗作只留下了6首 李白只留下十分之一，总数有五千到一万首 杜甫四十岁之前的诗全部失传，而他只活了58岁，大半辈子的诗白写了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读唐诗">
+<meta property="og:url" content="http://iamxh.github.io/2019/05/30/%E8%AF%BB%E5%94%90%E8%AF%97/index.html">
+<meta property="og:site_name" content="不要香菜">
+<meta property="og:description" content="现在读到唐诗有多幸运？当时唐诗正在快速失传，据胡震亨估算，到他所处的年代（距唐朝已经八百年了），唐诗已经至少失传了一半。   被誉为“孤篇压全唐”的《春江花月夜》，它的作者张若虚，一生的诗作只留下了两首。 《登鹳雀楼》的作者王之涣，一生诗作只留下了6首 李白只留下十分之一，总数有五千到一万首 杜甫四十岁之前的诗全部失传，而他只活了58岁，大半辈子的诗白写了">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-30T12:26:42.000Z">
+<meta property="article:modified_time" content="2019-05-30T12:30:58.786Z">
+<meta property="article:author" content="假装文艺">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="http://iamxh.github.io/2019/05/30/%E8%AF%BB%E5%94%90%E8%AF%97/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>读唐诗 | 不要香菜</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不要香菜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-tags&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br&gt;归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://iamxh.github.io/2019/05/30/%E8%AF%BB%E5%94%90%E8%AF%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="假装文艺">
+      <meta itemprop="description" content="你必须努力奔跑，才能留在原地">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不要香菜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">读唐诗
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-30 20:26:42 / 修改时间：20:30:58" itemprop="dateCreated datePublished" datetime="2019-05-30T20:26:42+08:00">2019-05-30</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="现在读到唐诗有多幸运？"><a href="#现在读到唐诗有多幸运？" class="headerlink" title="现在读到唐诗有多幸运？"></a>现在读到唐诗有多幸运？</h3><p>当时唐诗正在快速失传，据胡震亨估算，到他所处的年代（距唐朝已经八百年了），唐诗已经至少失传了一半。</p>
+<blockquote>
+<ul>
+<li>被誉为“孤篇压全唐”的《春江花月夜》，它的作者张若虚，一生的诗作只留下了两首。</li>
+<li>《登鹳雀楼》的作者王之涣，一生诗作只留下了6首</li>
+<li>李白只留下十分之一，总数有五千到一万首</li>
+<li>杜甫四十岁之前的诗全部失传，而他只活了58岁，大半辈子的诗白写了</li>
+</ul>
+</blockquote>
+<span id="more"></span>
+
+<p>康熙皇帝选定曹雪芹的爷爷曹寅（时任江宁织造），在季振宜的《唐诗》和胡震亨的《唐音统签》的基础上，编纂《全唐诗》</p>
+<h3 id="佳作摘抄"><a href="#佳作摘抄" class="headerlink" title="佳作摘抄"></a>佳作摘抄</h3><ol>
+<li><p>人人尽说江南好，游人只合江南老。春水碧于天，画船听雨眠。(《菩萨蛮》，韦庄)</p>
+</li>
+<li><p>合欢蠲忿叶，萱草忘忧条。</p>
+</li>
+<li><p>云想衣裳花想容，春风拂槛露华浓</p>
+</li>
+<li><p>弃我去者，昨日之日不可留；乱我心者，今日之日多烦忧</p>
+</li>
+<li><p>春风得意马蹄疾，一日看尽长安花。</p>
+<blockquote>
+<p>现代版解释：</p>
+<ol>
+<li>冷漠的人，谢谢你们曾经看轻我</li>
+<li>让我们青春做伴，活的潇潇洒洒；策马奔腾，共享人世繁华</li>
+</ol>
+</blockquote>
+</li>
+<li><p>秋风清，秋月明，<br>落叶聚还散，寒鸦栖复惊，<br>相思相见知何日，此时此夜难为情。</p>
+</li>
+</ol>
+<h3 id="妙语连珠"><a href="#妙语连珠" class="headerlink" title="妙语连珠"></a>妙语连珠</h3><ol>
+<li>有点假大空，套话略多，被称为“文表华艳”</li>
+<li>伟大的时代往往都是这样开启的，当门被推开时，并没有什么大动静，大家尚在沉睡，只有当光照进来后，人们才被惊醒，发出赞叹之音</li>
+<li>在武侠小说里，凡是复姓的都是高手，什么令狐，西门，慕容，尤其是东方，更是高手中的高手</li>
+<li>图书馆管理员这个职位，深不可测，前途可大可小。做大了，有无限可能。(冼星海，梁实秋，沈从文，李大钊，毛泽东)</li>
+<li>组织上重视什么，偏偏不搞什么；组织上不重视了，又开始搞了。比如领导喜欢民歌时，他就搞摇滚；领导开始喜欢爵士了，他就搞嘻哈；最后领导不拘一格开始选秀了，他就跨了</li>
+<li>了解之后的拒绝，渊博之后的专注，选择之后的坚持</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/05/08/%E9%87%91%E9%92%B1%E4%B8%8D%E8%83%BD%E4%B9%B0%E4%BB%80%E4%B9%88/" rel="next" title="金钱不能买什么">
+                  <i class="fa fa-chevron-left"></i> 金钱不能买什么
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/05/30/%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB/" rel="prev" title="高效学习与快速阅读">
+                  高效学习与快速阅读 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%B0%E5%9C%A8%E8%AF%BB%E5%88%B0%E5%94%90%E8%AF%97%E6%9C%89%E5%A4%9A%E5%B9%B8%E8%BF%90%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">现在读到唐诗有多幸运？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%B3%E4%BD%9C%E6%91%98%E6%8A%84"><span class="nav-number">2.</span> <span class="nav-text">佳作摘抄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%99%E8%AF%AD%E8%BF%9E%E7%8F%A0"><span class="nav-number">3.</span> <span class="nav-text">妙语连珠</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="假装文艺">
+  <p class="site-author-name" itemprop="name">假装文艺</p>
+  <div class="site-description" itemprop="description">你必须努力奔跑，才能留在原地</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">假装文艺</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v5.4.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.4.0.js"></script>
+
+<script src="/js/motion.js?v=7.4.0.js"></script>
+
+
+<script src="/js/schemes/muse.js?v=7.4.0.js"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.4.0.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+<script src="/js/local-search.js?v=7.4.0.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
